@@ -6,6 +6,9 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controllers\\Invoice' => $baseDir . '/src/Controllers/Invoice.php',
     'App\\Controllers\\Welcome' => $baseDir . '/src/Controllers/Welcome.php',
+    'App\\Exception\\RouteNotFoundException' => $baseDir . '/src/Exception/RouteNotFoundException.php',
+    'App\\Public\\Router' => $baseDir . '/src/Public/Router.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

@@ -1,7 +1,7 @@
 <?php
     namespace App\Controllers;
     class Welcome{
-        public function sayhello(){
+        public function index(){
             echo "Hello World";
         }
     }

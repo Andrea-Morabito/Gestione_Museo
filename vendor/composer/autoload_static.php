@@ -21,7 +21,10 @@ class ComposerStaticInit48f0d440465edc7fdd51ae29470455cc
     );
 
     public static $classMap = array (
+        'App\\Controllers\\Invoice' => __DIR__ . '/../..' . '/src/Controllers/Invoice.php',
         'App\\Controllers\\Welcome' => __DIR__ . '/../..' . '/src/Controllers/Welcome.php',
+        'App\\Exception\\RouteNotFoundException' => __DIR__ . '/../..' . '/src/Exception/RouteNotFoundException.php',
+        'App\\Public\\Router' => __DIR__ . '/../..' . '/src/Public/Router.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 

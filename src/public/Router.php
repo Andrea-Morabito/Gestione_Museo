@@ -3,14 +3,26 @@ namespace App\Public;
 use App\Exception\RouteNotFoundException;
 class Router{
     private array $routes;
-    public function addRoute(string $route, callable|array $action) :self{
-        $this->routes[$route] = $action;
+    private function addRoute(string $requestType, string $route, callable|array $action) :self{
+        $this->routes[$requestType][$route] = $action;
         return $this;
     }
 
-    public function resolve(string $_REQUEST_URI){
+    public function get(string $route, callable|array $action) :self{
+        return $this->addRoute('get', $route, $action);
+    }
+
+    public function post(string $route, callable|array $action) :self{
+        return $this->addRoute('post', $route, $action);
+    }
+
+    public function routes(): array{
+        return $this->routes;
+    }
+
+    public function resolve(string $_REQUEST_URI, string $requestType){
         $route = explode('?', $_REQUEST_URI)[0];
-        $action = $this ->routes[$route] ?? null;
+        $action = $this ->routes[$requestType][$route] ?? null;
         if(! $action){
             throw new RouteNotFoundException();
         }

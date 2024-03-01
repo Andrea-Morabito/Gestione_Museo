@@ -1,7 +1,8 @@
 <?php
     namespace App\Controllers;
-    class Welcome{
+    use App\View;
+    class Home{
         public function index(){
-            echo "Hello World";
+            return View::make('index')->render();
         }
     }

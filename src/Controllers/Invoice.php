@@ -1,11 +1,18 @@
 <?php
     namespace App\Controllers;
+    use App\View;
     class Invoice{
+
         public function index(){
-            echo "Hello form Invoice";
+            return View::make('invoices/index')->render();
         }
 
         public function create(){
-            echo "Create from invoice";
+            return View::make('invoices/create')->render();
+        }
+
+        public function store(){
+            $amount = $_POST['number'];
+            echo $amount;
         }
     }

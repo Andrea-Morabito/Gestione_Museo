@@ -1,13 +1,13 @@
 # Esposizione ( 2 ore ) Ok
-\
+
 # Pianificazione del progetto ( 16 ore )
 ## Sottofasi:
  1. Suddivisione in fasi del progetto ( 1 ora ) ## OK
  2. Creazione di modelli GANTT e CPM ( 3 ore )
  3. Analisi dei requisiti ( 4 ore )
- 4. Scrittura SRS ( 6 ore )
- 5. Analisi dei Rischi ( 2 ore )
-\
+ 4. Analisi dei Rischi ( 2 ore )
+ 5. Scrittura SRS ( 6 ore )
+
 # Progettazzione Software ( 32 ore )
 ## Sottofasi:
  1. Progettazione E.R ( 2 ore )
@@ -19,5 +19,5 @@
  7. Creazione front-end UI ( 8 ore )
  8. Test Applicazione ( 1 ore )
  9. Manutenzione ( 3 ore )
-\
+
 # Follow up ( 1 ora ) ?

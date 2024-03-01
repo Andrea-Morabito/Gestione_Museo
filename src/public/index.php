@@ -1,9 +1,13 @@
 <?php
+    use App\Exceptions\RouteNotFoundException;
+    use App\View;
     include "vendor/autoload.php";
-    $router = new App\Public\Router();
-
     define('VIEW_PATH', __DIR__.'/../Views');
-    define('STYLE_PATH', __DIR__.'/../Public/Styles');
+    define('STYLE_PATH', __DIR__.'/Styles/style.css');
+    var_dump(STYLE_PATH);
+    try{
+        $router = new App\Public\Router();
+
 
     $router
     ->get("/",[App\Controllers\Home::class, 'index'])
@@ -12,3 +16,7 @@
     ->post("/invoices/create", [App\Controllers\Invoice::class, 'store']);
 
     $router->resolve($_SERVER['REQUEST_URI'], strtolower($_SERVER['REQUEST_METHOD']));
+    }catch(\App\Exception\RouteNotFoundException $e){
+        http_response_code(404);
+        echo View::make('error/404');
+    }

@@ -12,7 +12,7 @@ class View{
         return new static($view, $params);
     }
 
-    public function render() : string{
+    public function render() {
         $viewPath = VIEW_PATH."/".$this->view.'.php';
         if(!file_exists($viewPath)){
             throw new ViewNotFoundException();
@@ -20,6 +20,10 @@ class View{
         ob_start();
         include $viewPath;
 
-        return ob_start();
+        return (string) ob_start();
+    }
+
+    public function __toString() : string{
+        return $this->render();
     }
 }

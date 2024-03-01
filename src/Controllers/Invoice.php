@@ -3,12 +3,12 @@
     use App\View;
     class Invoice{
 
-        public function index(){
-            return View::make('invoices/index')->render();
+        public function index(): string{
+            return View::make('invoices/index');
         }
 
-        public function create(){
-            return View::make('invoices/create')->render();
+        public function create(): string{
+            return View::make('invoices/create');
         }
 
         public function store(){

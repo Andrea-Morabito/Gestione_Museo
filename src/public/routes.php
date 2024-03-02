@@ -1,10 +1,11 @@
 <?php
     use App\Exceptions\RouteNotFoundException;
     use App\View;
+
     include "vendor/autoload.php";
     define('VIEW_PATH', __DIR__.'/../Views');
-    define('STYLE_PATH', __DIR__.'/Styles/style.css');
-    var_dump(STYLE_PATH);
+    define('STYLE_PATH', 'src/Public/Styles');
+    define('IMAGES_PATH', 'src/Public/Images');
     try{
         $router = new App\Public\Router();
 

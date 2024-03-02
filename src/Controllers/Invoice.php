@@ -4,11 +4,11 @@
     class Invoice{
 
         public function index(): string{
-            return View::make('invoices/index');
+            return (string)View::make('invoices/index');
         }
 
         public function create(): string{
-            return View::make('invoices/create');
+            return (string)View::make('invoices/create');
         }
 
         public function store(){

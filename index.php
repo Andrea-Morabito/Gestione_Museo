@@ -1,1 +1,1 @@
-<?php include("src/Public/index.php");
+<?php include("src/Public/routes.php");

@@ -10,7 +10,7 @@ return array(
     'App\\Controllers\\Invoice' => $baseDir . '/src/Controllers/Invoice.php',
     'App\\Exception\\RouteNotFoundException' => $baseDir . '/src/Exception/RouteNotFoundException.php',
     'App\\Exception\\ViewNotFoundException' => $baseDir . '/src/Exception/ViewNotFoundException.php',
-    'App\\Public\\Router' => $baseDir . '/src/Public/Router.php',
+    'App\\Shared\\Router' => $baseDir . '/src/Shared/Router.php',
     'App\\View' => $baseDir . '/src/View.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

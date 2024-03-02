@@ -1,5 +1,6 @@
 <?php 
-namespace App\Public;
+
+namespace App\Shared;
 use App\Exception\RouteNotFoundException;
 class Router{
     public array $routes;

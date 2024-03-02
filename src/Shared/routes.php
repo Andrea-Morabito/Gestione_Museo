@@ -1,13 +1,13 @@
 <?php
     use App\Exceptions\RouteNotFoundException;
     use App\View;
-
+    use App\Shared\Router;
     include "vendor/autoload.php";
     define('VIEW_PATH', __DIR__.'/../Views');
-    define('STYLE_PATH', 'src/Public/Styles');
-    define('IMAGES_PATH', 'src/Public/Images');
+    define('STYLE_PATH', 'src/Shared/Styles');
+    define('IMAGES_PATH', 'src/Shared/Images');
     try{
-        $router = new App\Public\Router();
+        $router = new Router();
         
         $router
         ->get("/",[App\Controllers\Home::class, 'index'])

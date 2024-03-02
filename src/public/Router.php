@@ -2,7 +2,7 @@
 namespace App\Public;
 use App\Exception\RouteNotFoundException;
 class Router{
-    private array $routes;
+    public array $routes;
     private function addRoute(string $requestType, string $route, callable|array $action) :self{
         $this->routes[$requestType][$route] = $action;
         return $this;

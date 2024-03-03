@@ -3,6 +3,6 @@
     use App\View;
     class Home{
         public function index():string{
-            return View::make('index', ['foo'=> 'bar']);
+            return View::make('index');
         }
     }

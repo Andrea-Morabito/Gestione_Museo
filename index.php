@@ -1,2 +1,1 @@
-<?php 
-    include "ProgettoVenereUDA/index.php";
+<?php include("src/Shared/routes.php");

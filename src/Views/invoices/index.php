@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="<?php echo STYLE_PATH.'/style.css'?>">
 </head>
 <body>
-    <h1><?= $foo ?></h1>
-    <h1>Ciao Mondo</h1>
+    <h1>Hello form Invoice</h1>
+    <h2>ksudh</h2>
 </body>
 </html>

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Define font variables */
+:root {
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+  }
+  
+
+*,
+
+body{
+    background-color: #f8fafc ;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);;
+}
+
+.fullViewport {
+    height: calc(100svh - 3px);
+}
+
+.ErrorImage {
+    width: 400px;
+    height: 400px;
+}
+
+.flex{
+    display: grid;
+} 
+
+.flex-center-x{
+    align-items: center;
+}
+
+.flex-center-y{
+    justify-items: center;
+}
+
+.flex-coloumn{
+    flex-direction: column;
+}
+
+/* Animation for the planet */
+.animatePlanet {
+    animation: rotate 45s infinite linear;
+
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+/*End animation for the planet*/
+

@@ -1,11 +1,20 @@
 RewriteEngine On 
-RewriteBase / 
+
+# Update the RewriteBase to point to the /ProgettoVenereUDA directory
+RewriteBase /
+
+# Exclude existing files and directories from rewriting
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php?uri=1
 
+# Rewrite all requests to index.php with the URI as a query parameter
+RewriteRule ^(.*)$ index.php?uri=$1 [QSA,L]
+
+# Deny access to specific directories
 RewriteRule ^src/?$ - [F,L]
 RewriteRule ^src/Controllers/?$ - [F,L]
-RewriteRule ^src/Models?$ - [F,L]
-RewriteCond %{REQUEST_URI} src/Public/documents/
+RewriteRule ^src/Models/?$ - [F,L]
+
+# Deny access to specific directories under src/Public
+RewriteCond %{REQUEST_URI} ^/ProgettoVenereUDA/src/Public/documents/
 RewriteRule .* - [F,L]

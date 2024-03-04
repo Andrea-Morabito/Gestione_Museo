@@ -1,4 +1,4 @@
-#Leggenda E-R
+# Leggenda E-R
 <table>
    <thead>
       <tr>

@@ -31,6 +31,8 @@
    </tbody>
 </table>
 
+# Diagramma ER
+
 ```mermaid
 ---
 title: DBMuseo

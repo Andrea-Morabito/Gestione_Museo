@@ -1,3 +1,6 @@
+# Analisi Rischi
+-------
+
 | ANALISI RISCHI | GRAVITA | PROBABILITA | DANNO |
 | :------------------------ | :-------------------------: | :-------------------------: | ----------------: |
 | Assenza risorse umane | 2| 2|4|

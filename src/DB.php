@@ -4,9 +4,9 @@
  use PDO;
  class DB{
     private $host = "localhost";
-    private $user = "root";
+    private $user = "morabito5400";
     private $pass = "";
-    private $dbName = "uda";
+    private $dbName = "my_morabito5400";
 
     public function connect(){
         $dns = 'mysql:host='. $this->host .';dbname='. $this->dbName;

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<?php echo STYLE_PATH.'/style.css'?>">
 </head>
 <body>
-    <h1><?php echo $nome;
+    <h1><?php echo $nome." ".$cognome;
     ?></h1>
     <h1>Ciao Mondo</h1>
 </body>

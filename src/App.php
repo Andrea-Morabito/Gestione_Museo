@@ -6,13 +6,8 @@
     use App\Shared\Router;
     use PDO;
     class App{
-        private static DB $db;
-        public function __construct(protected Router $router, protected array $request){
-            static::$db = new DB();
-        }
 
-        public static function getDb(): DB{
-            return static::$db;
+        public function __construct(protected Router $router, protected array $request){
         }
 
         public function run(){

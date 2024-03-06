@@ -41,11 +41,18 @@
 
 
 # Indice
-1. Obiettivo: 
-    1. L'obiettivo del nostro lavoro... 
-2. Panoramica
-    1. La restante parte di questo documento fornisce una descrizione dettagliata delle funzionalità richieste del software **Museo** secondo gli obbiettivi espressi nel punto *1*.
-3. 
+1. Introduzione
+    1. Obiettivo: 
+        1. L'obiettivo del nostro lavoro... 
+    2. Panoramica
+        1. La restante parte di questo documento fornisce una descrizione dettagliata delle funzionalità richieste del software **Museo** secondo gli obbiettivi espressi nel punto *1*.
+2. Descrizione Generale
+    1.Panoramica del progetto:
+        1.Il prodotto software deve essere in grado gestire le richieste dei clineti, per richieste si intende l'acquisto di biglietti per esposizioni o per il museo
+    2.Caratteristiche utente:
+        1.Un utente registrato nel prodotto software deve essere in grado di poter effetture prenotazioni a mostre o esposizioni, inoltre deve poter esseree in grado di abbinare al biglietto qualsivoglia opzione.
+
+		
   
 
 

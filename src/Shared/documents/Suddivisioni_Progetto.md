@@ -4,9 +4,10 @@
 ## Sottofasi:
  1. Suddivisione in fasi del progetto ( 1 ora ) ## OK
  2. Creazione di modelli GANTT e CPM ( 3 ore )
- 3. Analisi dei requisiti ( 6 ore )
- 4. Analisi dei Rischi ( 2 ore )
- 5. Scrittura SRS ( 3 ore )
+ 3. Analisi dei requisiti ( 5 ore )
+ 4. WBS(1 ora)
+ 5. Analisi dei Rischi ( 2 ore )
+ 6. Scrittura SRS ( 3 ore )
 
 # Progettazzione Software ( 32 ore )
 ## Sottofasi:

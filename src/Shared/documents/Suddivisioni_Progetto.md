@@ -9,7 +9,7 @@
  5. Analisi dei Rischi ( 2 ore )
  6. Scrittura SRS ( 3 ore )
 
-# Progettazzione Software ( 32 ore )
+# Progettazione Software ( 32 ore )
 ## Sottofasi:
  1. Progettazione E.R ( 2 ore )
  2. Traduzione a modello logico ( 1 ora )

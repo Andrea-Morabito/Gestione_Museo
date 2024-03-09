@@ -1,5 +1,6 @@
 # WBS (Work Breakdown Structure)
 ---
+
 ```mermaid
 flowchart TD
 Progetto
@@ -18,4 +19,5 @@ C --> L[Database]
 C --> M[HTML]
 C --> N[PHP]
 C --> O[Tests]
+
 ```

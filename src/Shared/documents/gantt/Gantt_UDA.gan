@@ -69,9 +69,11 @@
         </task>
         <task id="10" uid="4fcd6906a8554a25896a7a807855e071" name="Creazione struttura html" color="#ff0000" meeting="false" start="2024-03-20" duration="7" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
             <depend id="11" type="2" difference="0" hardness="Strong"/>
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="11" uid="0ecbd7aad068493cbb701499cdfebf74" name="Implementazione back-end PHP" color="#ff0000" meeting="false" start="2024-03-29" duration="9" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
             <depend id="12" type="2" difference="0" hardness="Strong"/>
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="12" uid="7f019dd56e2e40f5aa75141db47e17a6" name="Test back-end" color="#ff0000" meeting="false" start="2024-04-11" duration="1" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
             <depend id="14" type="2" difference="0" hardness="Strong"/>

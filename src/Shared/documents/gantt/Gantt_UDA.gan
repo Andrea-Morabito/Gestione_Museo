@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2024-02-27" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.3.3300" locale="it_IT">
+    <description/>
+    <view zooming-state="default:3" id="gantt-chart">
+        <field id="tpd3" name="Nome" width="200" order="0"/>
+        <field id="tpd4" name="Data d'inizio" width="75" order="1"/>
+        <field id="tpd5" name="Data di fine" width="75" order="2"/>
+        <field id="tpd15" name="Note" width="20" order="3"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <option id="color.recent"><![CDATA[#ff0000 #f4f4f4 #ffff00]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nome" width="210" order="0"/>
+        <field id="1" name="Ruolo predefinito" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="1" uid="d33283e0d13041008a23ba0b0fdfe465" name="Suddivisione in fasi del progetto" color="#ff0000" meeting="false" start="2024-03-01" duration="1" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" uid="afdec4523d694c44882db7e5ba7f68c4" name="Creazione di modelli GANTT e CPM" meeting="false" start="2024-03-04" duration="1" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true"/>
+        <task id="3" uid="73411486d97246bc934163b97657f3a9" name="Analisi dei requisiti" color="#ff0000" meeting="false" start="2024-03-04" duration="2" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="6" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="4" uid="f729a67159ac470092eb6a0b4547f680" name="WBS" meeting="false" start="2024-03-04" duration="1" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true"/>
+        <task id="5" uid="fef51b74b9ac478f9ed7a8bc77f55d65" name="Analisi dei Rischi" meeting="false" start="2024-03-04" duration="1" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true"/>
+        <task id="6" uid="162abdc31bf94449b839dfe9c21246a4" name="Scrittura SRS" color="#ff0000" meeting="false" start="2024-03-06" duration="4" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="7" type="2" difference="1" hardness="Strong"/>
+        </task>
+        <task id="7" uid="045b1c154f6341c1b0532993ca3bf387" name="Progettazione E.R" color="#ff0000" meeting="false" start="2024-03-13" duration="2" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="8" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="8" uid="55d4dac8c8bd41eba75f5bc3a8e44ad4" name="Traduzione a modello logico" color="#ff0000" meeting="false" start="2024-03-15" duration="1" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="9" uid="aac4960ec5a34680ad3ecfd2c8208e4e" name="Creazione database" color="#ff0000" meeting="false" start="2024-03-18" duration="1" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="11" type="2" difference="0" hardness="Strong"/>
+            <depend id="18" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="18" uid="2d603bcd3ad14955b7ff117e346ac28c" name="Controllo" color="#ffff00" meeting="false" start="2024-03-19" duration="1" complete="0" thirdDate="2024-02-23" thirdDate-constraint="0" expand="true">
+            <depend id="10" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="10" uid="4fcd6906a8554a25896a7a807855e071" name="Creazione struttura html" color="#ff0000" meeting="false" start="2024-03-20" duration="7" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="11" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="11" uid="0ecbd7aad068493cbb701499cdfebf74" name="Implementazione back-end PHP" color="#ff0000" meeting="false" start="2024-03-29" duration="9" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="12" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="12" uid="7f019dd56e2e40f5aa75141db47e17a6" name="Test back-end" color="#ff0000" meeting="false" start="2024-04-11" duration="1" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="14" uid="9ef6878ce26943b5bb2c3c6665b3ac3a" name="Creazione front-end UI" color="#ff0000" meeting="false" start="2024-04-12" duration="3" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="15" uid="7533e51e83d04a289e3ee7664fe94b0c" name="Test Applicazione" color="#ff0000" meeting="false" start="2024-04-17" duration="1" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="16" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="16" uid="4a3ad93417db42fbb1c8283ca5e3fcf6" name="Manutenzione" color="#ff0000" meeting="false" start="2024-04-18" duration="3" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true">
+            <depend id="17" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="17" uid="ab275c19b1994e29863336e71d2308b5" name="Follow up" color="#ff0000" meeting="false" start="2024-04-23" duration="1" complete="0" thirdDate="2024-03-11" thirdDate-constraint="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>

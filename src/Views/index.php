@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="<?php echo '/ProgettoVenereUDA' . '/' . STYLE_PATH . '/style.css';?>">
 </head>
 <body>
-    <h1><?php echo $nome." ".$cognome;
-    ?></h1>
+    <p>
+        <?php 
+        foreach($this->params as $k => $v){
+            foreach($v as $key => $value){
+                echo $key."->".$value;
+                echo "<br>";
+            }
+            echo "<br>";
+        }
+    ?></p>
     <h1>Ciao Mondo</h1>
 </body>
 </html>

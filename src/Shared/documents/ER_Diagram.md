@@ -32,6 +32,7 @@
 </table>
 
 # Diagramma ER 
+```mermaid
 ---
 title: Order example
 ---
@@ -52,3 +53,4 @@ erDiagram
         int quantity
         float pricePerUnit
     }
+```

@@ -32,7 +32,9 @@
 </table>
 
 # Diagramma ER
-
+---
+title: Order example
+---
 erDiagram
     CUSTOMER ||--o{ ORDER : places
     CUSTOMER {

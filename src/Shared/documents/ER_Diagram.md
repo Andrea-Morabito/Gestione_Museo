@@ -31,7 +31,7 @@
    </tbody>
 </table>
 
-# Diagramma ER
+# Diagramma ER 
 ---
 title: Order example
 ---

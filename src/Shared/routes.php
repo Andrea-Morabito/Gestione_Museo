@@ -15,9 +15,11 @@
         //Set all the routes for the Router
         $router
         ->get("/",[Controllers\Home::class, 'index'])
-        ->get("/invoices", [Controllers\Invoice::class, 'index'])
-        ->get("/invoices/create", [Controllers\Invoice::class, 'create'])
-        ->post("/invoices/create", [Controllers\Invoice::class, 'store']);
+        ->get("/login",[Controllers\Login::class, 'index'])
+        ->post("/login/authenticate",[Controllers\Login::class, 'authenticate'])
+        ->get("/signup",[Controllers\Signup::class, 'index'])
+        ->post("/signup/create",[Controllers\Signup::class, 'create'])
+        ->get('/dashboard',[Controllers\Dashboard::class,'index']);
       
     (new App(
         $router,

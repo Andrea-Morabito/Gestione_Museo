@@ -3,8 +3,8 @@
     use App\View;
     use App\App;
     use App\Models\User;
-    class Home{
+    class Dashboard{
         public function index():string{
-            return View::make('index');
+            return View::make('dashboard/index');
         }
     }

@@ -6,7 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello form Invoice</h1>
-    <h2>ksudh</h2>
+    <a href="/dashboard">Vai alla Dashboard</a>
 </body>
 </html>

@@ -44,14 +44,6 @@
 | Facco Matteo     | Osservatore                      | 1   |
 | Zoccarato Matteo | Capo progetto                    | 0   |
 
-# 9/03/2024
-
-| PARTECIPANTI     | RUOLI                            | ORE |
-|------------------|----------------------------------|-----|
-| Fracasso Isac    | Moderatore                       | 0   |
-| Morabito Andrea  | Addetto alle pubbliche relazioni | 1   |
-| Facco Matteo     | Osservatore                      | 0   |
-| Zoccarato Matteo | Capo progetto                    | 0   |
 
 # 11/03/2024
 

@@ -8,6 +8,6 @@
             return View::make('signup/index');
         }
         public function create():string{
-            return View::make('signup/create', $_POST);
+            return View::make('signup/create');
         }
     }

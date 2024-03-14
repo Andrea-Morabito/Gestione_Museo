@@ -8,6 +8,6 @@
             return View::make('login/index');
         }
         public function authenticate():string{
-            return View::make('login/authenticate', $_POST);
+            return View::make('login/authenticate');
         }
     }

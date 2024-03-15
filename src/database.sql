@@ -15,7 +15,8 @@ CREATE TABLE utente
     cognome varchar(50),
     password varchar(255),
     ruolo ENUM('admin', 'user') DEFAULT 'user',
-    PRIMARY KEY (IdUtente)
+    categoria INT,
+    PRIMARY KEY (IdUtente),
     FOREIGN KEY (categoria) REFERENCES categoria(IdCategoria)
 );
 

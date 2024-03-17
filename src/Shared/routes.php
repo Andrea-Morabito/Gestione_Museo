@@ -16,7 +16,7 @@
         $router
         ->get("/",[Controllers\Home::class, 'index'])
         ->get("/login",[Controllers\Login::class, 'index'])
-        ->post("/login/authenticate",[Controllers\Login::class, 'authenticate'])
+        ->post("/login",[Controllers\Login::class, 'authenticate'])
         ->get("/signup",[Controllers\Signup::class, 'index'])
         ->post("/signup/create",[Controllers\Signup::class, 'create'])
         ->get('/dashboard',[Controllers\Dashboard::class,'index']);

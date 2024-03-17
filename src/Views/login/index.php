@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>
-        <form action="/login/authenticate" method="post">
+        <form action="/login" method="post">
             <label for="userEmail">e-mail</label>
             <input type="text" name="userEmail">
             <label for="userEmail">Password</label>

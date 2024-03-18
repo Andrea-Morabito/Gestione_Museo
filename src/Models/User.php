@@ -19,6 +19,13 @@
         return $stmt->fetch()['password'];
     }
 
+    public function getUserRole(string $email){
+        $sql = "SELECT ruolo FROM utente WHERE email = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$email]);
+        return $stmt->fetch()['ruolo'];
+    }
+
     public function createUser(string $email, 
                                string $password, 
                                string $nome, 

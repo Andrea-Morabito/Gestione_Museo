@@ -10,6 +10,7 @@
         public function index():string{
             return View::make('signup/index');
         }
+        
         public function create():string{
             $user = new User();
 

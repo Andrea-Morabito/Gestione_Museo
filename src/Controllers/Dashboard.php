@@ -3,8 +3,17 @@
     use App\View;
     use App\App;
     use App\Models\User;
+    session_start();
+
     class Dashboard{
         public function index():string{
-            return View::make('dashboard/index');
+            $user = new User();
+            $user_mail = "admin@gmail.com";
+            $user_role = $user->getUserRole($user_mail);
+            if($user_role == "admin"){
+                return View::make('dashboard/amministratore');
+            } else if($user_role == "user"){
+                return View::make('dashboard/utente');
+            }
         }
     }

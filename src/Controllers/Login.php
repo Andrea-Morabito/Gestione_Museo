@@ -11,12 +11,18 @@
         }
         public function authenticate():string{
             $user = new User();
+            $user_mail = htmlentities($_POST['userEmail']);
             $login_password = htmlentities($_POST['userPassword']);
-            $user_password = $user->getPassword(htmlentities($_POST['userEmail']));
+            $user_password = $user->getPassword($user_mail);
+            $user_role = $user->getUserRole($user_mail);
             if(password_verify($login_password, $user_password)){
-                return View::make('login/success');
+                if($user_role == "admin"){
+                    return View::make('dashboard/amministratore');
+                } else if($user_role == "user"){
+                    return View::make('dashboard/utente');
+                }
             } else{
-                return View::make('index');
+                return View::make('login/index');
             }
         }
     }

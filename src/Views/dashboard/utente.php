@@ -6,12 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <?php include("includes/navbar.php")?>
     <h1>Utente</h1>
-    <?php 
-        foreach($this->params as $k=>$v){
-            var_dump($v);
-            echo "<br>";
-        }
-    ?>
 </body>
 </html>

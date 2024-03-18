@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <meta>
 </head>
 <body>
-    <a href="/dashboard">Vai alla Dashboard</a>
+    <h1>Sei in dashbaord</h1>
 </body>
 </html>

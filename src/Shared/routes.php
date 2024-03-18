@@ -18,9 +18,8 @@
         ->get("/login",[Controllers\Login::class, 'index'])
         ->post("/login",[Controllers\Login::class, 'authenticate'])
         ->get("/signup",[Controllers\Signup::class, 'index'])
-        ->post("/signup/create",[Controllers\Signup::class, 'create'])
-        ->get('/dashboard',[Controllers\Dashboard::class,'index']);
-      
+        ->post("/signup",[Controllers\Signup::class, 'create'])
+        ->get("/dashboard",[Controllers\Dashboard::class, 'index']);
     (new App(
         $router,
         ['uri' => $_SERVER['REQUEST_URI'], 'method' => $_SERVER['REQUEST_METHOD']],

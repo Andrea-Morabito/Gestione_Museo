@@ -16,11 +16,7 @@
             $user_password = $user->getPassword($user_mail);
             $user_role = $user->getUserRole($user_mail);
             if(password_verify($login_password, $user_password)){
-                if($user_role == "admin"){
-                    return View::make('dashboard/amministratore');
-                } else if($user_role == "user"){
-                    return View::make('dashboard/utente');
-                }
+                return View::make('dashboard/index');
             } else{
                 return View::make('login/index');
             }

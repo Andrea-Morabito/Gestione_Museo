@@ -24,6 +24,6 @@
             $user->createUser($email, password_hash($password, PASSWORD_DEFAULT), $username, $user_surname, $selected_category);
             $_SESSION['user_mail'] = $email;
             
-            return View::make('signup/create');
+            return View::make('dashboard/index');
         }
     }

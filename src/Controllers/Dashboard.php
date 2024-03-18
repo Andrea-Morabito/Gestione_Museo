@@ -14,6 +14,8 @@
                 return View::make('dashboard/amministratore');
             } else if($user_role == "user"){
                 return View::make('dashboard/utente');
+            } else{
+                return View::make('dashboard/error');
             }
         }
     }

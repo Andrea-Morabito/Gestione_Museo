@@ -7,7 +7,7 @@
 </head>
 <body>
 <div>
-        <form action="/signup/create" method="post">
+        <form action="/signup" method="post">
             <label for="userEmail">Email</label>
             <input type="email" name="userEmail">
             <label for="userPasswor">Password</label>

@@ -6,8 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-
-    <h1>Creato</h1>
-    <a href="/dashboard">Vai alla Dashboard</a>
+    <h1>Dashboard not found</h1>
 </body>
 </html>

@@ -16,7 +16,9 @@
             $user_password = $user->getPassword($user_mail);
             $user_role = $user->getUserRole($user_mail);
             if(password_verify($login_password, $user_password)){
-                return View::make('dashboard/index');
+                $_SESSION['user_mail'] = $user_mail;
+                $_SESSION['user_role'] = $user_role;
+                return View::make('success');
             } else{
                 return View::make('login/index');
             }

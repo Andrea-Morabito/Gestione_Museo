@@ -54,3 +54,25 @@ INSERT INTO `categoria` (`IdCategoria`, `descrizione`, `tipo`, `sconto`) VALUES
 INSERT INTO `utente` (`IdUtente`, `email`, `nome`, `cognome`, `password`, `ruolo`, `categoria`) VALUES
 (1, 'admin@gmail.com', 'admin', 'admin', '$2y$10$wJWLjTQhVKGZg/sQY2yU5eN.lbSsljNLUKiTtnTaZmGfIZu189eYi', 'admin', 1),
 (2, 'utente@gmail.com', 'utente', ' utente', '$2y$10$BCx2y5QcJGqBgq.s5RJWBekJeSV6yj.wPBzKfP/lpwdZOmTOM6yZ.', 'user', 1);
+
+INSERT INTO biglietto (titolo, tariffa, data_inizio, data_fine)
+VALUES 
+    ('Esposizione Arte Moderna', 15.00, '2024-03-18', '2024-03-25'),
+    ('Esposizione Fotografica', 10.00, '2024-04-10', '2024-04-15'),
+    ('Mostra Scultura Antica', 12.50, '2024-05-05', '2024-05-12'),
+    ('Esposizione Pittura Contemporanea', 18.00, '2024-06-01', '2024-06-07'),
+    ('Mostra Design Industriale', 14.50, '2024-07-10', '2024-07-17'),
+    ('Esposizione Architettura', 20.00, '2024-08-15', '2024-08-22'),
+    ('Mostra Arte Digitale', 17.50, '2024-09-20', '2024-09-28'),
+    ('Esposizione Storia Antica', 13.00, '2024-10-10', '2024-10-17'),
+    ('Mostra Fotografia Astratta', 16.50, '2024-11-05', '2024-11-12'),
+    ('Esposizione Sculture Moderne', 19.00, '2024-12-01', '2024-12-07');
+
+-- Inserimento di 5 visite
+INSERT INTO biglietto (titolo, tariffa, data_inizio, data_fine)
+VALUES 
+    ('Visita Guidata al Museo', 8.00, '2024-03-18', NULL),
+    ('Tour Artistico', 10.00, '2024-04-05', NULL),
+    ('Visita alla Galleria d\'Arte', 7.50, '2024-05-15', NULL),
+    ('Tour Storico', 9.00, '2024-06-20', NULL),
+    ('Visita al Palazzo Reale', 11.50, '2024-07-25', NULL);

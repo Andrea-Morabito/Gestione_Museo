@@ -7,5 +7,11 @@
 </head>
 <body>
     <h1>Amministratore</h1>
+    <?php 
+    foreach($this->params as $k=>$v){
+        var_dump($v);
+        echo "<br>";
+    }
+    ?>
 </body>
 </html>

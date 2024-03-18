@@ -22,8 +22,7 @@
             $selected_category = $category->getCategory(htmlentities($_POST['category']));
             
             $user->createUser($email, password_hash($password, PASSWORD_DEFAULT), $username, $user_surname, $selected_category);
-            $_SESSION['user_mail'] = $email;
-            
-            return View::make('dashboard/index');
+            $_SESSION['user_mail'] = $email;            
+            return View::make('success');
         }
     }

@@ -8,6 +8,5 @@
 <body>
     <?php include("includes/navbar.php")?>
     <h1>Utente</h1>
-    <?php include("includes/tickets.php")?>
 </body>
 </html>

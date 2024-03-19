@@ -13,7 +13,6 @@
         
         public function create():string{
             $user = new User();
-
             $category = new Category();
             $email = htmlentities($_POST['userEmail']);
             $password = htmlentities($_POST['userPassword']);
@@ -23,6 +22,6 @@
             
             $user->createUser($email, password_hash($password, PASSWORD_DEFAULT), $username, $user_surname, $selected_category);
             $_SESSION['user_mail'] = $email;            
-            return View::make('success');
+            return View::make('success', ['response_code' => 'Registrazione avvenuta con successo', 'url' => '/dashboard']);
         }
     }

@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="10;url=<?php echo $url?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>redirect</title>
+    <title>Document</title>
 </head>
 <body>
-    <?php echo $response_code?>
-    <p>Stai per essere reindirizzato...</p>
+    <h1>Vuoi aggiungere qualcosa?</h1>
+    <?php include('includes/accessory_list.php');?>
+    
 </body>
 </html>

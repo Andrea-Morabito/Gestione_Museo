@@ -12,7 +12,7 @@
                 <td><?php echo $v['data_inizio']?></td>
                 <td><?php echo $v['data_fine']?></td>
                 <td>
-                    <form action="dashboard/book" method="post">
+                    <form action="/dashboard/book" method="post">
                         <input type="hidden" name="ticket_name" value="<?php echo $v['titolo'];?>">
                         <input type="submit" name="ticket_book">
                     </form>

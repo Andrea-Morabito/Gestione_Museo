@@ -37,4 +37,10 @@
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$email, $nome, $cognome, $password, $categoria]);
     }
+
+    public function deleteUser(string $email){
+        $sql ="DELETE FROM utente WHERE email = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$email]);
+    }
 }

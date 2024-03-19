@@ -18,10 +18,14 @@
         ->get("/login",[Controllers\Login::class, 'index'])
         ->post("/login",[Controllers\Login::class, 'authenticate'])
         ->get("/signup",[Controllers\Signup::class, 'index'])
-        ->get("/signup",[Controllers\Signup::class, 'index'])
-        ->post("/logout",[Controllers\Dashboard::class, 'logout'])
+        ->post("/signup",[Controllers\Signup::class, 'create'])
+        ->get("/logout",[Controllers\Dashboard::class, 'logout'])
         ->get("/dashboard",[Controllers\Dashboard::class, 'index'])
-        ->post("/dashboard/book",[Controllers\Dashboard::class, 'ticket']);
+        ->get("/dashboard/events",[Controllers\Dashboard::class, 'eventList'])
+        ->post("/dashboard/book",[Controllers\Dashboard::class, 'bookEvent'])
+        ->get("/dashboard/delete_account",[Controllers\Dashboard::class, 'deleteUserAccount'])
+        ->post("/dashboard/add_accessories",[Controllers\Dashboard::class, 'add_accessories']);
+        
     (new App(
         $router,
         ['uri' => $_SERVER['REQUEST_URI'], 'method' => $_SERVER['REQUEST_METHOD']],

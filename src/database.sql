@@ -39,18 +39,21 @@ CREATE TABLE biglietto
 
 CREATE TABLE accessori_biglietto
 (
+    IdAccessorioBiglietto INT AUTO_INCREMENT NOT NULL,
 	Biglietto INT,
     Accessorio INT,
-    PRIMARY KEY (Biglietto, Accessorio),
+    Codice_Utente INT,
+    PRIMARY KEY (IdAccessorioBiglietto),
     FOREIGN KEY (Biglietto) REFERENCES biglietto(IdBiglietto),
-    FOREIGN KEY (Accessorio) REFERENCES accessorio(IdAccessorio)
+    FOREIGN KEY (Accessorio) REFERENCES accessorio(IdAccessorio),
+    FOREIGN KEY (Codice_Utente) REFERENCES utente(IdUtente)
 );
 
 CREATE TABLE prenotazione
 (
    	Codice_Biglietto INT,
    	Codice_Utente INT,
-    prenotazione date; 
+    prenotazione date,
     PRIMARY KEY (Codice_Biglietto, Codice_Utente),
     FOREIGN KEY (Codice_Biglietto) REFERENCES biglietto(IdBiglietto),
     FOREIGN KEY (Codice_Utente) REFERENCES utente(IdUtente)

@@ -46,6 +46,17 @@ CREATE TABLE accessori_biglietto
     FOREIGN KEY (Accessorio) REFERENCES accessorio(IdAccessorio)
 );
 
+CREATE TABLE prenotazione
+(
+   	Codice_Biglietto INT,
+   	Codice_Utente INT,
+    prenotazione date; 
+    PRIMARY KEY (Codice_Biglietto, Codice_Utente),
+    FOREIGN KEY (Codice_Biglietto) REFERENCES biglietto(IdBiglietto),
+    FOREIGN KEY (Codice_Utente) REFERENCES utente(IdUtente)
+
+);
+
 INSERT INTO `categoria` (`IdCategoria`, `descrizione`, `tipo`, `sconto`) VALUES
 (1, 'Sconto per clienti', 'cliente', 0),
 (2, 'Sconto per studenti', 'studente', 10),

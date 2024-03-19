@@ -6,10 +6,10 @@
     class User extends DB{
     
     public function getUser(string $email){
-        $sql = "SELECT * FROM utente WHERE email = ?";
+        $sql = "SELECT IdUtente FROM utente WHERE email = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$email]);
-        return $stmt->fetch();
+        return $stmt->fetch()['IdUtente'];
     }
 
     public function getPassword(string $email){

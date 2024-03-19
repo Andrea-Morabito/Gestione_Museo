@@ -7,7 +7,7 @@
     <title>redirect</title>
 </head>
 <body>
-    <p>Richiesta avvenuta con successo</p>
-    <p>Stai per essere reindirizzato nella dashboard</p>
+    <?php echo $response_code?>
+    <p>Stai per essere reindirizzato...</p>
 </body>
 </html>

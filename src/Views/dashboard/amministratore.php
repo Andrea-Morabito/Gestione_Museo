@@ -8,5 +8,8 @@
 <body>
     <?php include("includes/navbar.php")?>
     <h1>Amministratore</h1>
+    <?php 
+        include("includes/tickets.php")
+    ?>
 </body>
 </html>

@@ -51,10 +51,11 @@ CREATE TABLE accessori_biglietto
 
 CREATE TABLE prenotazione
 (
+    IdPrenotazione INT AUTO_INCREMENT,
    	Codice_Biglietto INT,
    	Codice_Utente INT,
-    prenotazione date,
-    PRIMARY KEY (Codice_Biglietto, Codice_Utente),
+    data_prenotazione date,
+    PRIMARY KEY (IdPrenotazione),
     FOREIGN KEY (Codice_Biglietto) REFERENCES biglietto(IdBiglietto),
     FOREIGN KEY (Codice_Utente) REFERENCES utente(IdUtente)
 

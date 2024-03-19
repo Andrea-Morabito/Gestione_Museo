@@ -52,15 +52,16 @@
             $user_id = $user->getUser($_SESSION['user_mail']);
             $ticket_id = $ticket->getTicket($_POST['ticket_name']);
             
-            foreach($_POST as $k => $v){
-                var_dump($_POST);
-                echo $k;
-                echo "<br>";
-                echo $v;
-                echo '<br>';
-                $accessory->addTicketAccessory($ticket_id, (int)$v, $user_id);
+            $post_count = count($_POST);
+            $counter = 0;
+            
+            foreach($_POST as $k => $v) {
+                $counter++;
+                if ($counter < $post_count) {
+                    $accessory->addTicketAccessory($ticket_id, (int)$v, $user_id);
+                }
             }
-            return View::make('success', ['response_code' => 'Accessori avvenuti correttamente', 'url' => '/dashboard']);
+            return View::make('success', ['response_code' => 'Accessori aggiunti correttamente', 'url' => '/dashboard']);
         }
 
         public function logout():string{

@@ -6,7 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include("includes/navbar.php")?>
+    
+    <?php include(__DIR__.'/../includes/navbar.php')?>
     <h1>Amministratore</h1>
+    <a href="/dashboard/tickets/add">Aggiungi Biglietto</a>
+    <a href="/dashboard/users">Gestisci utenti</a>
 </body>
 </html>

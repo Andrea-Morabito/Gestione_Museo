@@ -4,6 +4,13 @@
     use App\Model;
     use App\DB;
     class User extends DB{
+
+    public function getAllUsers():array{
+        $sql = "SELECT email, nome, cognome, categoria FROM utente";
+        $stmt = $this->connect()->query($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
     
     public function getUser(string $email){
         $sql = "SELECT IdUtente FROM utente WHERE email = ?";

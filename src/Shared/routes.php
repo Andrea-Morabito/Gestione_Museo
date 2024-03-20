@@ -15,16 +15,28 @@
         //Set all the routes for the Router
         $router
         ->get("/",[Controllers\Home::class, 'index'])
+        //Login routes
         ->get("/login",[Controllers\Login::class, 'index'])
         ->post("/login",[Controllers\Login::class, 'authenticate'])
+        //Signup routes
         ->get("/signup",[Controllers\Signup::class, 'index'])
         ->post("/signup",[Controllers\Signup::class, 'create'])
+        //Logout routes
         ->get("/logout",[Controllers\Dashboard::class, 'logout'])
+        //route for managin tickets
         ->get("/dashboard",[Controllers\Dashboard::class, 'index'])
-        ->get("/dashboard/events",[Controllers\Dashboard::class, 'eventList'])
+        ->get("/dashboard/tickets",[Controllers\Dashboard::class, 'eventList'])
+        ->get("/dashboard/tickets/add",[Controllers\Dashboard::class, 'addEventForm'])
+        ->post("/dashboard/tickets/add",[Controllers\Dashboard::class, 'addEvent'])
+        ->post("/dashboard/tickets/delete",[Controllers\Dashboard::class, 'deleteEvent'])
+        //routes for managing users
+        ->get("/dashboard/users",[Controllers\Dashboard::class, 'userList'])
+        ->get("/dashboard/users/add",[Controllers\Dashboard::class, 'addUserForm'])
+        ->post("/dashboard/users/add",[Controllers\Dashboard::class, 'addUser'])
+        //other dashboard routes
         ->post("/dashboard/book",[Controllers\Dashboard::class, 'bookEvent'])
         ->get("/dashboard/delete_account",[Controllers\Dashboard::class, 'deleteUserAccount'])
-        ->post("/dashboard/add_accessories",[Controllers\Dashboard::class, 'add_accessories']);
+        ->post("/dashboard/add_accessories",[Controllers\Dashboard::class, 'addAccessories']);
         
     (new App(
         $router,

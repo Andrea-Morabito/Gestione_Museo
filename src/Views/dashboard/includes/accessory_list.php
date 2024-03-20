@@ -7,20 +7,16 @@
 </head>
 <body>
     <form style="display:flex;flex-direction:column" action="/dashboard/add_accessories" method='post'>
-    <?php 
-        foreach($accessories as $k => $v){
-    ?>
-
+    <?php foreach($accessories as $k => $v){ ?>
             <div>
-            <td><input type="checkbox" value="<?php echo $v['IdAccessorio']?>" name="<?php echo $v['descrizione']?>"><?php echo $v['descrizione']?></td>
-            <?php echo $v['prezzo']?>
+                <tr>
+                    <td><input type="checkbox" value="<?php echo $v['IdAccessorio']?>" name="<?php echo $v['descrizione']?>"><?php echo $v['descrizione']?></td>
+                    <td><?php echo $v['prezzo']?></td>
+                </tr>
             </div>
-
-    <?php
-        }
-    ?>
-    <input type="hidden" value="<?php echo $ticket_name?>" name="ticket_name">
-    <input type="submit">
+    <?php }?>
+        <input type="hidden" value="<?php echo $ticket_name?>" name="ticket_name">
+        <input type="submit" value="Aggiungi" \>
     </form>
 </body>
 </html>

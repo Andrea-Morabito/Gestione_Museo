@@ -10,4 +10,10 @@
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$id_ticket, $id_user, date("Y-m-d")]);
         }
+
+        public function deleteBookings($ticket_id){
+            $sql = "DELETE FROM prenotazione WHERE Codice_Biglietto = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$ticket_id]);
+        }
     }

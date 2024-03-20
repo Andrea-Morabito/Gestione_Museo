@@ -11,14 +11,22 @@
                 <td><?php echo $v['tariffa']?></td>
                 <td><?php echo $v['data_inizio']?></td>
                 <td><?php echo $v['data_fine']?></td>
-                <td>
+                <?php if($_SESSION['user_role'] == 'user'){ ?>
+                    <td>
                     <form action="/dashboard/book" method="post">
                         <input type="hidden" name="ticket_name" value="<?php echo $v['titolo'];?>">
-                        <input type="submit" name="ticket_book">
+                        <input type="submit" name="ticket_book" value="Aggiungi" />
                     </form>
-                </td>
+                    </td>
+                <?php } ?>
+                <?php if($_SESSION['user_role'] == 'admin'){ ?>
+                        <td>
+                        <form action="/dashboard/tickets/delete" method="post">
+                            <input type="hidden" name="ticket_name" value="<?php echo $v['titolo'];?>">
+                            <input type="submit" name="ticket_delete" value="Elimina" />
+                        </form>
+                        </td>
+                <?php } ?>
                 </tr>
-            <?php
-        }
-    ?>
+            <?php } ?>
 </table>

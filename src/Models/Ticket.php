@@ -17,4 +17,25 @@
             $stmt->execute();
             return $stmt->fetchAll();
         }
+
+        public function add(string $name, 
+                            string $price, 
+                            string $start_date, 
+                            string $end_date){
+            $sql = "INSERT INTO biglietto(titolo, tariffa, data_inizio, data_fine) VALUES (?, ?, ?, ?)";
+            $stmt = $this->connect()->prepare($sql);
+
+            if(empty($end_date)){
+                $stmt->execute([$name, $price, $start_date, NULL]);
+            } else{
+                $stmt->execute([$name, $price, $start_date, $end_date]);
+            }
+
+        }
+
+        public function delete($ticket_id){
+            $sql = "DELETE FROM biglietto WHERE IdBiglietto = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$ticket_id]);
+        }
     }

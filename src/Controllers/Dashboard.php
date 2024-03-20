@@ -6,6 +6,7 @@
     use App\Models\User;
     use App\Models\Ticket;
     use App\Models\Accessory;
+    use App\Models\Category;
     session_start();
 
     class Dashboard{
@@ -16,7 +17,7 @@
             $user_role = $user->getUserRole($user_mail);
 
             if($user_role == "admin"){
-                return View::make('dashboard/amministratore');
+                return View::make('dashboard/amministratore/amministratore');
             } else if($user_role == "user"){
                 return View::make('dashboard/utente');
             } else{
@@ -29,6 +30,55 @@
             $available_tickets = $ticket->getAvailableTickets();
             return View::make('dashboard/tickets', $available_tickets);
         }
+
+        public function userList():string{
+            $users = new User();
+            $users_list = $users->getAllUsers();
+            return View::make('/dashboard/amministratore/users', $users_list);
+        }
+
+        public function addEventForm(){
+            if($_SESSION['user_role'] == 'admin'){
+                return View::make('/dashboard/amministratore/addTicket');
+            } else{
+                return View::make('/error/404');
+            }
+        }
+
+        public function addUserForm(){
+            if($_SESSION['user_role'] == 'admin'){
+                return View::make('/dashboard/amministratore/addUser');
+            } else{
+                return View::make('/error/404');
+            }
+        }
+
+        public function addEvent():string{
+            $ticket = new Ticket();
+
+            $ticket_name = htmlentities($_POST['ticket_name']);
+            $ticket_price = htmlentities($_POST['ticket_price']);
+            $ticket_startDate = htmlentities($_POST['ticket_start']);
+            $ticket_endDate = htmlentities($_POST['ticket_end']);
+
+            $ticket->add($ticket_name, $ticket_price, $ticket_startDate, $ticket_endDate);
+            return View::make('success', ['response_code' => 'Biglietto creato con successo', 'url' => '/dashboard']);
+        }
+
+        public function addUser():string{
+            $user = new User();
+            $category = new Category();
+            $email = htmlentities($_POST['userEmail']);
+            $password = htmlentities($_POST['userPassword']);
+            $username = htmlentities($_POST['userName']);
+            $user_surname = htmlentities($_POST['userSurname']);
+            $selected_category = $category->getCategory(htmlentities($_POST['category']));
+            
+            $user->createUser($email, password_hash($password, PASSWORD_DEFAULT), $username, $user_surname, $selected_category);
+            $_SESSION['user_mail'] = $email;            
+            return View::make('success', ['response_code' => 'Utente creato con successo', 'url' => '/dashboard']);
+        }
+
 
         public function bookEvent():string{
             $user = new User();
@@ -44,7 +94,22 @@
             return View::make('/dashboard/accessories', ['ticket_name' => $ticket_name, 'accessories' => $available_accessories]);
         }
 
-        public function add_accessories(){
+        public function deleteEvent(){
+            $ticket = new Ticket();
+            $accessory = new Accessory();
+            $booking_manager = new Booking();
+
+            $ticket_name = htmlentities($_POST['ticket_name']);
+            $ticket_id = $ticket->getTicket($ticket_name);
+
+            $accessory->deleteAccessories($ticket_id);
+            $booking_manager->deleteBookings($ticket_id);
+            $ticket->delete($ticket_id);
+
+            return View::make('success', ['response_code' => 'Biglietto Cencellato', 'url' => '/dashboard']);
+        }
+
+        public function addAccessories(){
             $user = new User();
             $ticket = new Ticket();
             $accessory = new Accessory();

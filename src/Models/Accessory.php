@@ -24,10 +24,17 @@
             $stmt->execute([$id_biglietto, $id_accessorio, $id_utente]);
         }
 
-        public function deleteAccessories($ticket_id){
+        public function deleteAccessories(int $ticket_id){
             $sql = "DELETE FROM accessori_biglietto WHERE Biglietto = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$ticket_id]);
+        }
+        
+
+        public function deleteUserAccessories(int $ticket_id, int $user_id){
+            $sql = "DELETE FROM accessori_biglietto WHERE Biglietto = ? AND Codice_Utente = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$ticket_id, $user_id]);
         }
         
     }

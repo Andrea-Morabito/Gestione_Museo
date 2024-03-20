@@ -33,6 +33,7 @@
         ->get("/dashboard/users",[Controllers\Dashboard::class, 'userList'])
         ->get("/dashboard/users/add",[Controllers\Dashboard::class, 'addUserForm'])
         ->post("/dashboard/users/add",[Controllers\Dashboard::class, 'addUser'])
+        ->post("/dashboard/users/delete",[Controllers\Dashboard::class, 'deleteUser'])
         //other dashboard routes
         ->post("/dashboard/book",[Controllers\Dashboard::class, 'bookEvent'])
         ->get("/dashboard/delete_account",[Controllers\Dashboard::class, 'deleteUserAccount'])

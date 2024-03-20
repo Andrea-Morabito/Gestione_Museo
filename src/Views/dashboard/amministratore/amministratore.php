@@ -9,7 +9,9 @@
     
     <?php include(__DIR__.'/../includes/navbar.php')?>
     <h1>Amministratore</h1>
-    <a href="/dashboard/tickets/add">Aggiungi Biglietto</a>
-    <a href="/dashboard/users">Gestisci utenti</a>
+    <ul>
+        <li><a href="/dashboard/tickets/add">Aggiungi Biglietto</a></li>
+        <li><a href="/dashboard/users">Gestisci utenti</a></li>
+    </ul>
 </body>
 </html>

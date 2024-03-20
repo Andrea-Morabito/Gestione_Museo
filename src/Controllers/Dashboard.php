@@ -109,6 +109,22 @@
             return View::make('success', ['response_code' => 'Biglietto Cencellato', 'url' => '/dashboard']);
         }
 
+        public function deleteUser(){
+            $user = new User();
+            $user_id = $user->getUser(htmlentities($_POST['user_mail']));
+            
+            $booking_manager = new Booking();
+            $prenotations = $booking_manager->getBookings($user_id);
+
+            $accessory = new Accessory();
+            foreach($prenotations as $k => $v){
+                $ticket_id = $v['Codice_Biglietto'];
+                $accessory->deleteUserAccessories($ticket_id, $user_id);
+                $booking_manager->deleteUserBookings($ticket_id, $user_id);
+            }
+            return View::make('success', ['response_code' => 'Utente Cencellato', 'url' => '/dashboard']);
+        }
+
         public function addAccessories(){
             $user = new User();
             $ticket = new Ticket();

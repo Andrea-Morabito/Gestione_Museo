@@ -91,3 +91,26 @@ VALUES
     ('Visita alla Galleria d\'Arte', 7.50, '2024-05-15', NULL),
     ('Tour Storico', 9.00, '2024-06-20', NULL),
     ('Visita al Palazzo Reale', 11.50, '2024-07-25', NULL);
+
+
+    INSERT INTO accessorio (descrizione, prezzo) VALUES
+('Guide audio', 9.99),
+('Mappa del museo', 5.49),
+('Penna souvenir', 3.99),
+('T-shirt del museo', 12.99),
+('Cappello del museo', 8.99),
+('Poster artistico', 15.49),
+('Set di cartoline', 6.99),
+('Calamita per frigorifero', 2.99),
+('Puzzle del museo', 11.99),
+('Portachiavi', 4.49),
+('Libro illustrato', 18.99),
+('Set di matite artistiche', 7.49),
+('Sciarpa del museo', 14.99),
+('Tazza da caffe', 9.99),
+('Miniatura del museo', 20.49),
+('Kit di pittura', 16.99),
+('Collana con pendente', 13.99),
+('Album fotografico', 22.49),
+('Orologio da polso', 19.99),
+('Set di adesivi', 3.49);

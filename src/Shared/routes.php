@@ -28,6 +28,7 @@
         ->get("/dashboard/tickets",[Controllers\Dashboard::class, 'eventList'])
         ->get("/dashboard/tickets/add",[Controllers\Dashboard::class, 'addEventForm'])
         ->post("/dashboard/tickets/add",[Controllers\Dashboard::class, 'addEvent'])
+        ->post("/ticket/add/summary",[Controllers\Dashboard::class, 'getTicketPrice'])
         ->post("/dashboard/tickets/delete",[Controllers\Dashboard::class, 'deleteEvent'])
         //routes for managing users
         ->get("/dashboard/users",[Controllers\Dashboard::class, 'userList'])

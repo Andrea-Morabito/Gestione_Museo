@@ -11,6 +11,13 @@
             $stmt->execute([$nome_accessorio]);
             return $stmt->fetch()['IdBiglietto'];
         }
+
+        public function getPrice(string $accessory_id): string{
+            $sql = "SELECT prezzo FROM accessorio WHERE IdAccessorio = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$accessory_id]);
+            return $stmt->fetch()["prezzo"];
+        }
         public function getAvailableAccessories(): array{
             $sql = "SELECT * FROM accessorio";
             $stmt = $this->connect()->query($sql);

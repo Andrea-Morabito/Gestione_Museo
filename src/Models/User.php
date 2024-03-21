@@ -19,6 +19,13 @@
         return $stmt->fetch()['IdUtente'];
     }
 
+    public function getUserCategory(string $email){
+        $sql = "SELECT categoria FROM utente WHERE email = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$email]);
+        return $stmt->fetch()['categoria'];
+    }
+
     public function getPassword(string $email){
         $sql = "SELECT password FROM utente WHERE email = ?";
         $stmt = $this->connect()->prepare($sql);

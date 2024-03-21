@@ -17,6 +17,12 @@
             $stmt->execute([$id_ticket, $id_user, date("Y-m-d")]);
         }
 
+        public function getUserDiscount(int $category_id){
+            $sql = "SELECT sconto FROM categoria WHERE IdCategoria = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$category_id]);
+        }
+
         public function deleteBookings(int $ticket_id){
             $sql = "DELETE FROM prenotazione WHERE Codice_Biglietto = ? AND Codice_Utente = ?";
             $stmt = $this->connect()->prepare($sql);

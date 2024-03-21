@@ -21,7 +21,8 @@
             $selected_category = $category->getCategory(htmlentities($_POST['category']));
             
             $user->createUser($email, password_hash($password, PASSWORD_DEFAULT), $username, $user_surname, $selected_category);
-            $_SESSION['user_mail'] = $email;            
+            $_SESSION['user_mail'] = $email;      
+            $_SESSION['user_role'] = 'user';  
             return View::make('success', ['response_code' => 'Registrazione avvenuta con successo', 'url' => '/dashboard']);
         }
     }

@@ -129,20 +129,28 @@
             $user = new User();
             $ticket = new Ticket();
             $accessory = new Accessory();
+            $booking_manager = new Booking();
 
             $user_id = $user->getUser($_SESSION['user_mail']);
             $ticket_id = $ticket->getTicket($_POST['ticket_name']);
-            
+            $category_id = $user->getUserCategory($user_id);
+            $total_price = $ticket->getPrice($ticket_id) * $booking_manager->getUserDiscount($category_id);
             $post_count = count($_POST);
             $counter = 0;
             
             foreach($_POST as $k => $v) {
                 $counter++;
                 if ($counter < $post_count) {
+                    $price = $accessory->getPrice($v);
+                    $total_price += $price;
                     $accessory->addTicketAccessory($ticket_id, (int)$v, $user_id);
                 }
             }
-            return View::make('success', ['response_code' => 'Accessori aggiunti correttamente', 'url' => '/dashboard']);
+            return View::make('/dashboard/utente/summary', ['response_code' => 'Accessori aggiunti correttamente', 'url' => '/dashboard', 'totale'=> $total_price]);
+        }
+
+        public function getTicketPrice(){
+            $ticket = new Ticket();
         }
 
         public function logout():string{

@@ -11,6 +11,14 @@
             $stmt->execute([$nome_biglietto]);
             return $stmt->fetch()['IdBiglietto'];
         }
+
+        public function getPrice(string $ticket_id): string{
+            $sql = "SELECT tariffa FROM biglietto WHERE IdBiglietto = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$ticket_id]);
+            return $stmt->fetch()["tariffa"];
+        }
+
         public function getAvailableTickets(): array{
             $sql = "SELECT titolo, tariffa, data_inizio, data_fine FROM biglietto";
             $stmt = $this->connect()->query($sql);

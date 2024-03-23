@@ -8,6 +8,6 @@
 <body>
     <?php include(__DIR__.'/../includes/navbar.php')?>
     <?php echo $totale ?>
-    <a href="/dashboard"></a>
+    <a href="/dashboard">sadsad</a>
 </body>
 </html>

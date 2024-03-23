@@ -21,6 +21,7 @@
             $sql = "SELECT sconto FROM categoria WHERE IdCategoria = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$category_id]);
+            return $stmt->fetch()['sconto'];
         }
 
         public function deleteBookings(int $ticket_id){

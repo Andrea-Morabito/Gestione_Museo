@@ -19,10 +19,10 @@
         return $stmt->fetch()['IdUtente'];
     }
 
-    public function getUserCategory(string $email){
-        $sql = "SELECT categoria FROM utente WHERE email = ?";
+    public function getUserCategory(string $user_id){
+        $sql = "SELECT categoria FROM utente WHERE IdUtente = ?";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$email]);
+        $stmt->execute([$user_id]);
         return $stmt->fetch()['categoria'];
     }
 

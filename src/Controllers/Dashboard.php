@@ -134,7 +134,7 @@
             $user_id = $user->getUser($_SESSION['user_mail']);
             $ticket_id = $ticket->getTicket($_POST['ticket_name']);
             $category_id = $user->getUserCategory($user_id);
-            $total_price = $ticket->getPrice($ticket_id) * $booking_manager->getUserDiscount($category_id);
+            $total_price = ($ticket->getPrice($ticket_id) * (100 - $booking_manager->getUserDiscount($category_id)))/100;
             $post_count = count($_POST);
             $counter = 0;
             

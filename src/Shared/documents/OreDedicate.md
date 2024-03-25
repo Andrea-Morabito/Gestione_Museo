@@ -98,10 +98,10 @@
 
 | PARTECIPANTI     | RUOLI                            | ORE |
 |------------------|----------------------------------|-----|
-| Fracasso Isac    | Moderatore                       | 1   |
-| Morabito Andrea  | Addetto alle pubbliche relazioni | 1   |
+| Fracasso Isac    | Moderatore                       | 2   |
+| Morabito Andrea  | Addetto alle pubbliche relazioni | 2   |
 | Facco Matteo     | Osservatore                      | 0   |
-| Zoccarato Matteo | Capo progetto                    | 1   |
+| Zoccarato Matteo | Capo progetto                    | 2   |
 
 
 

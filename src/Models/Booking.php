@@ -25,7 +25,7 @@
         }
 
         public function deleteBookings(int $ticket_id){
-            $sql = "DELETE FROM prenotazione WHERE Codice_Biglietto = ? AND Codice_Utente = ?";
+            $sql = "DELETE FROM prenotazione WHERE Codice_Biglietto = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$ticket_id]);
         }

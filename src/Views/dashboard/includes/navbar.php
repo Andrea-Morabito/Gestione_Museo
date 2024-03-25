@@ -2,7 +2,9 @@
     <header>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/dashboard/tickets">Biglietti</a></li>
+           
+           <li><a href="/dashboard/tickets">Biglietti</a></li>
+
             <li><a href="/logout">Logout</a></li>
             
             <?php if(isset($_SESSION['user_role']) && $_SESSION['user_role'] != 'admin'){ ?>

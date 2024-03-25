@@ -94,6 +94,17 @@
 | Zoccarato Matteo | Capo progetto                    | 2   |
 
 
+# 25/03/2024
+
+| PARTECIPANTI     | RUOLI                            | ORE |
+|------------------|----------------------------------|-----|
+| Fracasso Isac    | Moderatore                       | 1   |
+| Morabito Andrea  | Addetto alle pubbliche relazioni | 1   |
+| Facco Matteo     | Osservatore                      | 0   |
+| Zoccarato Matteo | Capo progetto                    | 1   |
+
+
+
 
 
 

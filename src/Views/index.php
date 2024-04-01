@@ -20,7 +20,9 @@
 
     <div class="video-container">
         <div class="video-text">
-            <div style="margin: auto auto;height:inherit;"><p>sdfiug</p></div>
+            <div>
+                <p>sdfiug</p>
+            </div>
         </div>
     </div>
 </body>

@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
+
 *, *::before, *::after{
   margin: 0;
   box-sizing: border-box;
@@ -25,12 +27,22 @@ body{
 .video-container{
   position: relative;
   text-align: center;
-  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.viaggiareunostiledivita.it%2Fwp-content%2Fuploads%2F2017%2F08%2FDSC_0868.jpg&f=1&nofb=1&ipt=6c863db3a6087094b365ebaace6724d0d9b7d52e3a23ff7f4ab1909d0f824d02&ipo=images);
-  background-size: 100%;
+  background-image: url(https://cdn.studenti.stbm.it/images/2023/11/28/british-museum-orig.jpeg);
+  height: 600px;
   background-repeat: no-repeat;
-  height: calc(100svh - 7em);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top:0px;
+  left:0px;
+
   z-index: 1;
 }
 
 .video-text{
+  color: white;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }

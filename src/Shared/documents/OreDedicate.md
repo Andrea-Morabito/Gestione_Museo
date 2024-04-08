@@ -125,6 +125,20 @@
 
 
 
+# 08/04/2024
+
+| PARTECIPANTI     | RUOLI                            | ORE |
+|------------------|----------------------------------|-----|
+| Fracasso Isac    | Moderatore                       | 1   |
+| Morabito Andrea  | Addetto alle pubbliche relazioni | 1   |
+| Facco Matteo     | Osservatore                      | 1   |
+| Zoccarato Matteo | Capo progetto                    | 0   |
+
+
+
+
+
+
 
 
 

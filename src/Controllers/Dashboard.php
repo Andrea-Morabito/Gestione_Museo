@@ -74,8 +74,7 @@
             $user_surname = htmlentities($_POST['userSurname']);
             $selected_category = $category->getCategory(htmlentities($_POST['category']));
             
-            $user->createUser($email, password_hash($password, PASSWORD_DEFAULT), $username, $user_surname, $selected_category);
-            $_SESSION['user_mail'] = $email;            
+            $user->createUser($email, password_hash($password, PASSWORD_DEFAULT), $username, $user_surname, $selected_category);         
             return View::make('success', ['response_code' => 'Utente creato con successo', 'url' => '/dashboard']);
         }
 
@@ -122,6 +121,7 @@
                 $accessory->deleteUserAccessories($ticket_id, $user_id);
                 $booking_manager->deleteUserBookings($ticket_id, $user_id);
             }
+            $user->deleteUser(htmlentities($_POST['user_mail']));
             return View::make('success', ['response_code' => 'Utente Cencellato', 'url' => '/dashboard']);
         }
 
@@ -134,7 +134,7 @@
             $user_id = $user->getUser($_SESSION['user_mail']);
             $ticket_id = $ticket->getTicket($_POST['ticket_name']);
             $category_id = $user->getUserCategory($user_id);
-            $total_price = $ticket->getPrice($ticket_id) * $booking_manager->getUserDiscount($category_id);
+            $total_price = ($ticket->getPrice($ticket_id) * (100 - $booking_manager->getUserDiscount($category_id)))/100;
             $post_count = count($_POST);
             $counter = 0;
             
@@ -161,7 +161,18 @@
 
         public function deleteUserAccount():string {
             $user = new User();
-            $user->deleteUser($_SESSION['user_mail']);
+            $user_id = $user->getUser(htmlentities($_POST['user_mail']));
+            
+            $booking_manager = new Booking();
+            $prenotations = $booking_manager->getBookings($user_id);
+
+            $accessory = new Accessory();
+            foreach($prenotations as $k => $v){
+                $ticket_id = $v['Codice_Biglietto'];
+                $accessory->deleteUserAccessories($ticket_id, $user_id);
+                $booking_manager->deleteUserBookings($ticket_id, $user_id);
+            }
+            $user->deleteUser(htmlentities($_POST['user_mail']));
             session_unset();
             session_destroy();
             return View::make('success', ['response_code' => 'Account eliminato con successo', 'url' => '/']);

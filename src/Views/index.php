@@ -8,11 +8,22 @@
 </head>
 <body>
     <nav>
-        <div>
-            <h1><span>V</span><span>E</span><span>N</span><span>E</span><span>R</span><span>E</span></h1>
-            <a href="/login">Login</a>
+        <div class="navbar">
+            <p>chi siamo</p>
+            <h1>VENERE</h1>
+            <div>
+            <a href="/login" style="margin-right:10px">Login</a>
             <a href="/signup">Signup</a>
+            </div>
         </div>
     </nav>
+
+    <div class="video-container">
+        <div class="video-text">
+            <div>
+                <p>sdfiug</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

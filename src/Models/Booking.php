@@ -21,10 +21,11 @@
             $sql = "SELECT sconto FROM categoria WHERE IdCategoria = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$category_id]);
+            return $stmt->fetch()['sconto'];
         }
 
         public function deleteBookings(int $ticket_id){
-            $sql = "DELETE FROM prenotazione WHERE Codice_Biglietto = ? AND Codice_Utente = ?";
+            $sql = "DELETE FROM prenotazione WHERE Codice_Biglietto = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$ticket_id]);
         }

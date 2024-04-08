@@ -19,21 +19,21 @@
         return $stmt->fetch()['IdUtente'];
     }
 
-    public function getUserCategory(string $email){
-        $sql = "SELECT categoria FROM utente WHERE email = ?";
+    public function getUserCategory(string $user_id){
+        $sql = "SELECT categoria FROM utente WHERE IdUtente = ?";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$email]);
+        $stmt->execute([$user_id]);
         return $stmt->fetch()['categoria'];
     }
 
-    public function getPassword(string $email){
+    public function getPassword(string $email): string{
         $sql = "SELECT password FROM utente WHERE email = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$email]);
         return $stmt->fetch()['password'];
     }
 
-    public function getUserRole(string $email){
+    public function getUserRole(string $email): string{
         $sql = "SELECT ruolo FROM utente WHERE email = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$email]);

@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="<?php echo '/ProgettoVenereUDA' . '/' . STYLE_PATH . '/style.css';?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="<?php echo '/ProgettoVenereUDA' . '/' . STYLE_PATH . '/style.css'?>">
+  </head>
+
+  
+<body background="<?php echo '/ProgettoVenereUDA' . '/' . IMAGES_PATH.'/museum_presentation.jpg'?>">
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <img class="navbar-brand" src="<?php echo '/ProgettoVenereUDA' . '/' . IMAGES_PATH.'/palette-fill.svg'?>" alt="NAVBAR_LOGO">
@@ -32,14 +35,16 @@
     </div>
   </div>
 </nav>
-<img style="margin-top:1em;" src="<?php echo '/ProgettoVenereUDA' . '/' . IMAGES_PATH.'/museum_presentation.jpg'?>" class="img-fluid mx-auto d-block" alt="IMG_MUSEO">
+<!--<div>
+<img id="backgroundFix"  src="<?php echo '/ProgettoVenereUDA' . '/' . IMAGES_PATH.'/museum_presentation.jpg'?>" alt = "background">
+</div>
 <div class="fixed-bottom">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src="<?php echo '/ProgettoVenereUDA' . '/' . IMAGES_PATH.'/palette-fill.svg'?>" alt="MUSEUM_LOGO">
     </a>
   </div>
-</div>
+</div>-->
 
 </body>
-</html>
+</html>l

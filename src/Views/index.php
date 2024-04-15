@@ -10,7 +10,7 @@
   </head>
 
   
-<body background="<?php echo '/ProgettoVenereUDA' . '/' . IMAGES_PATH.'/museum_presentation.jpg'?>">
+<body>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -31,13 +31,14 @@
         </li>
         
       </ul>
-      
+    </div>
+    <div>
+      <h1>VENERE</h1>
     </div>
   </div>
 </nav>
-<!--<div>
-<img id="backgroundFix"  src="<?php echo '/ProgettoVenereUDA' . '/' . IMAGES_PATH.'/museum_presentation.jpg'?>" alt = "background">
-</div>
+<img style="width:100%; object-fit: fill;" src="<?php echo '/ProgettoVenereUDA' . '/' . IMAGES_PATH.'/museum_presentation.jpg'?>" class="img-fluid" alt="">
+<!--
 <div class="fixed-bottom">
   <div class="container">
     <a class="navbar-brand" href="#">
@@ -47,4 +48,4 @@
 </div>-->
 
 </body>
-</html>l
+</html>

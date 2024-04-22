@@ -143,12 +143,16 @@
             foreach($_POST as $k => $v) {
                 $counter++;
                 if ($counter < $post_count) {
-                    $price = $accessory->getPrice($v);
-                    $total_price += $price;
-                    $accessory->addTicketAccessory($ticket_id, (int)$v, $user_id);
+                    $listaAccessori = [];
+                    foreach($v as $key => $value){
+                        $price = $accessory->getPrice($value);
+                        array_push($listaAccessori, $accessory->getName($value));
+                        $total_price += $price;
+                        $accessory->addTicketAccessory($ticket_id, (int)$v, $user_id);
+                    }
                 }
             }
-            return View::make('/dashboard/utente/summary', ['response_code' => 'Accessori aggiunti correttamente', 'url' => '/dashboard', 'totale'=> $total_price]);
+            return View::make('/dashboard/utente/summary', ['response_code' => 'Accessori aggiunti correttamente', 'url' => '/dashboard', 'totale'=> $total_price, $listaAccessori, 'nome_biglietto' => $_POST['ticket_name']]);
         }
 
         public function getTicketPrice(){

@@ -10,24 +10,18 @@
 </head>
 <body style="display:flex;justify-content:center; align-items:center;">
     
-    <div class="form-style">
+    <div class="form-container">
         <form action="/login" method="post">
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">@</span>
-            <input type="text" name="userEmail" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">? </span>
-            <input type="password" name="userPassword" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-
-            <!--
-            <label for="userEmail">e-mail</label>
-            <input type="text" name="userEmail">
-            <label for="userEmail">Password</label>
-            <input type="password" name="userPassword">
-            <input type="submit">
-            -->
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" name="userEmail" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">? </span>
+                <input type="password" name="userPassword" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            
             <a href="/signup">Non sei Registrato?</a>
         </form>
     </div>

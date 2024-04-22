@@ -39,7 +39,9 @@
 
         public function addEventForm(){
             if($_SESSION['user_role'] == 'admin'){
-                return View::make('/dashboard/amministratore/addTicket');
+                $ticket = new Ticket();
+                $available_tickets = $ticket->getAvailableTickets();
+                return View::make('/dashboard/amministratore/addTicket', $available_tickets);
             } else{
                 return View::make('/error/404');
             }

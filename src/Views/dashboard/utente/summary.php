@@ -11,25 +11,51 @@
 <body>
     <?php include(__DIR__.'/../includes/navbar.php')?>
 
-    <h1>Riassunto acquisto biglietto <?php echo $nome_biglietto; ?></h1>
+    <h1 style="margin: 1em 0;">Riassunto acquisto biglietto <?php echo $nome_biglietto; ?></h1>
     <div style="display:flex; justify-content: center; align-items:center;">
-        <h2>Totale</h2>
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="green" class="bi bi-check" viewBox="0 0 16 16">
-            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
-        </svg>
+        <h2 style="font-size:1.5em;font-weight:bold;">Riepilogo</h2>
     </div>
     <div>
-        <?php 
-        foreach($listaAccessori as $k => $v){
-            var_dump($v);
-        }
-        ?>
+    <div>
+    <div>
+    <div class="accordion" id="accessoryAccordion">
+            <div class="accordion-item">
+                <div class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <!-- Contenuto dell'accessorio -->
+                        <ul class="list-group">
+                            <li class="list-group-item "><span class="accessory_heading"><?php echo $nome_biglietto ?></span></li>
+                            <li class="list-group-item">Prezzo: <?php echo $prezzo_biglietto?>€</li>
+                            <!-- Aggiungi altri dettagli se necessario -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php foreach($riepilogo as $k => $v): ?>
+        <div class="accordion" id="accessoryAccordion">
+            <div class="accordion-item">
+                <div class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <!-- Contenuto dell'accessorio -->
+                        <ul class="list-group">
+                            <li class="list-group-item "><span class="accessory_heading"><?php echo $v['descrizione'] ?></span></li>
+                            <li class="list-group-item">Prezzo: <?php echo $v['prezzo']?>€</li>
+                            <!-- Aggiungi altri dettagli se necessario -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
     </div>
     <div >
-        <div class="card">
+        <div class="card center">
             <div class="card-body">
-                <h5 class="card-title">Importo Totale:</h5>
-                <p class="card-text"><?php echo $totale ?></p>
+                <h5 class="card-title accessory_heading">Importo Totale</h5>
+                <p style="text-align:center;" class="card-text"><strong><?php echo $totale ?></strong>€</p>
             </div>
         </div>
     </div>

@@ -14,11 +14,18 @@
                 <a class="navbar-brand" href="/logout">Logout</a>
             </div>
             <?php if(isset($_SESSION['user_role']) && $_SESSION['user_role'] != 'admin'){ ?>
-                <div class="col">
+                <div class="col center">
                     <form action="/dashboard/delete_account" method="get">
                         <input type="hidden" name="user_mail" value="<?php echo $_SESSION['user_mail'] ?>">
                         <button type="submit" class="btn btn-danger">Cancella</button>
                     </form>
+                </div>
+                <div class="col center">
+                    <a href="/dashboard/cart">
+                        <span>
+                            <img src="<?php echo IMAGES_PATH."/bag.svg";?>" alt="IMMAGINE_CARRELLO">
+                        </span>
+                    </a>
                 </div>
             <?php } ?>
         </div>

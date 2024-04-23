@@ -12,11 +12,11 @@
             return $stmt->fetch()['IdBiglietto'];
         }
 
-        public function getName($id): string{
-            $sql = "SELECT descrizione FROM accessorio WHERE IdAccessorio = ?";
+        public function getName($id): array{
+            $sql = "SELECT descrizione, prezzo FROM accessorio WHERE IdAccessorio = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$id]);
-            return $stmt->fetch()['descrizione'];
+            return $stmt->fetch();
         }
 
         public function getPrice(string $accessory_id): string{

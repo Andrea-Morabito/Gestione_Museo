@@ -13,11 +13,11 @@
     <?php include(__DIR__.'/../includes/navbar.php'); ?>
     
     <h1 class="text-center">Lista Prenotazioni</h1>
-    <div class="container">
+    <div>
         <div class="row">
             <?php foreach($prenotazioni as $k => $v){ ?>
                 <?php foreach($v as $key => $value){ ?>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" style="margin: 10px">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><strong><?php echo $value['titolo']; ?></strong></h5>

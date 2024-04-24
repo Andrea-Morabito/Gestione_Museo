@@ -10,7 +10,7 @@
 </head>
 <body style="display:flex;justify-content:center; align-items:center;">
     
-    <div class="container">
+    <div class="container center">
         <div class="form-container">
             <form action="/login" method="post">
                 <div class="input-group mb-3">

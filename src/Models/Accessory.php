@@ -12,6 +12,13 @@
             return $stmt->fetch()['IdBiglietto'];
         }
 
+        public function getName($id): array{
+            $sql = "SELECT descrizione, prezzo FROM accessorio WHERE IdAccessorio = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$id]);
+            return $stmt->fetch();
+        }
+
         public function getPrice(string $accessory_id): string{
             $sql = "SELECT prezzo FROM accessorio WHERE IdAccessorio = ?";
             $stmt = $this->connect()->prepare($sql);
@@ -29,6 +36,12 @@
             $sql = "INSERT INTO accessori_biglietto(Biglietto, Accessorio, Codice_Utente) VALUES (?, ?, ?)";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$id_biglietto, $id_accessorio, $id_utente]);
+        }
+
+        public function getUserAccessories(int $user_id, int $ticket_id){
+            $sql = "SELECT Accessorio FROM accessori_biglietto WHERE Codice_Utente =  ? AND Biglietto = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$user_id, $ticket_id]);
         }
 
         public function deleteAccessories(int $ticket_id){

@@ -39,7 +39,9 @@
 
         public function addEventForm(){
             if($_SESSION['user_role'] == 'admin'){
-                return View::make('/dashboard/amministratore/addTicket');
+                $ticket = new Ticket();
+                $available_tickets = $ticket->getAvailableTickets();
+                return View::make('/dashboard/amministratore/addTicket', $available_tickets);
             } else{
                 return View::make('/error/404');
             }
@@ -134,23 +136,42 @@
             $user_id = $user->getUser($_SESSION['user_mail']);
             $ticket_id = $ticket->getTicket($_POST['ticket_name']);
             $category_id = $user->getUserCategory($user_id);
-            $total_price = ($ticket->getPrice($ticket_id) * (100 - $booking_manager->getUserDiscount($category_id)))/100;
+            $ticket_price = $ticket->getPrice($ticket_id);
+            $total_price = ( $ticket_price * (100 - $booking_manager->getUserDiscount($category_id)))/100;
             $post_count = count($_POST);
             $counter = 0;
             
             foreach($_POST as $k => $v) {
                 $counter++;
                 if ($counter < $post_count) {
-                    $price = $accessory->getPrice($v);
-                    $total_price += $price;
-                    $accessory->addTicketAccessory($ticket_id, (int)$v, $user_id);
+                    $listaAccessori = [];
+                    foreach($v as $key => $value){
+                        $price = $accessory->getPrice($value);
+                        array_push($listaAccessori, $accessory->getName($value));
+                        $total_price += $price;
+                        $accessory->addTicketAccessory($ticket_id, (int)$v, $user_id);
+                    }
                 }
             }
-            return View::make('/dashboard/utente/summary', ['response_code' => 'Accessori aggiunti correttamente', 'url' => '/dashboard', 'totale'=> $total_price]);
+            return View::make('/dashboard/utente/summary', ['response_code' => 'Accessori aggiunti correttamente', 'url' => '/dashboard', 'totale'=> $total_price, 'riepilogo'=>$listaAccessori, 'nome_biglietto' => $_POST['ticket_name'], 'prezzo_biglietto' => $ticket_price]);
         }
 
         public function getTicketPrice(){
             $ticket = new Ticket();
+        }
+
+        public function showCart(){
+            $booking_manager = new Booking();
+            $user = new User();
+            $ticket = new Ticket();
+
+            $user_id = $user->getUser($_SESSION['user_mail']);
+            $bookings_ids = $booking_manager->getBookings($user_id);
+            $bookings = [];
+            foreach($bookings_ids as $k => $v){
+                array_push($bookings, $ticket->getName($v['Codice_Biglietto']));
+            }
+            return View::make('dashboard/utente/cart', ['prenotazioni'=>$bookings]);
         }
 
         public function logout():string{

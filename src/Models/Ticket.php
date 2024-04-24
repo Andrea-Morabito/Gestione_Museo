@@ -46,4 +46,11 @@
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$ticket_id]);
         }
+
+        public function getName($ticket_id){
+            $sql = "SELECT titolo, data_inizio, data_fine FROM biglietto WHERE IdBiglietto = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$ticket_id]);
+            return $stmt->fetchAll();
+        }
     }

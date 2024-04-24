@@ -8,7 +8,7 @@
     include "vendor/autoload.php";
     define('VIEW_PATH', __DIR__.'/../Views');
     define('STYLE_PATH', 'src/Shared/Styles');
-    define('IMAGES_PATH', 'src/Shared/Images');
+    define('IMAGES_PATH', '/ProgettoVenereUDA/src/Shared/Images');
 
         $router = new Router(); // Creates a new object Router
         
@@ -25,6 +25,7 @@
         ->get("/logout",[Controllers\Dashboard::class, 'logout'])
         //route for managin tickets
         ->get("/dashboard",[Controllers\Dashboard::class, 'index'])
+        ->get("/dashboard/cart",[Controllers\Dashboard::class, 'showCart'])
         ->get("/dashboard/tickets",[Controllers\Dashboard::class, 'eventList'])
         ->get("/dashboard/tickets/add",[Controllers\Dashboard::class, 'addEventForm'])
         ->post("/dashboard/tickets/add",[Controllers\Dashboard::class, 'addEvent'])
@@ -39,6 +40,7 @@
         ->post("/dashboard/book",[Controllers\Dashboard::class, 'bookEvent'])
         ->get("/dashboard/delete_account",[Controllers\Dashboard::class, 'deleteUserAccount'])
         ->post("/dashboard/add_accessories",[Controllers\Dashboard::class, 'addAccessories']);
+        
         
     (new App(
         $router,

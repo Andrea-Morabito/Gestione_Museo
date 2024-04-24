@@ -14,7 +14,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <img class="navbar-brand" src="<?php echo '/ProgettoVenereUDA' . '/' . IMAGES_PATH.'/palette-fill.svg'?>" alt="NAVBAR_LOGO">
+    <img class="navbar-brand" src="<?php echo IMAGES_PATH.'/palette-fill.svg'?>" alt="NAVBAR_LOGO">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,12 +37,12 @@
     </div>
   </div>
 </nav>
-<img style="width:100%; object-fit: fill;" src="<?php echo '/ProgettoVenereUDA' . '/' . IMAGES_PATH.'/museum_presentation.jpg'?>" class="img-fluid" alt="">
+<img style="width:100%; object-fit: fill;" src="<?php echo IMAGES_PATH.'/museum_presentation.jpg'?>" class="img-fluid" alt="">
 <!--
 <div class="fixed-bottom">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="<?php echo '/ProgettoVenereUDA' . '/' . IMAGES_PATH.'/palette-fill.svg'?>" alt="MUSEUM_LOGO">
+      <img src="<?php echo IMAGES_PATH.'/palette-fill.svg'?>" alt="MUSEUM_LOGO">
     </a>
   </div>
 </div>-->

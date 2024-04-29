@@ -198,4 +198,6 @@
             session_destroy();
             return View::make('success', ['response_code' => 'Account eliminato con successo', 'url' => '/']);
         }
+
+        public 
     }

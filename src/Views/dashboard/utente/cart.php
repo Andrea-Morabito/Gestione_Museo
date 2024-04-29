@@ -23,8 +23,12 @@
                             <h5 class="card-title"><strong><?php echo $value['titolo']; ?></strong></h5>
                             <p class="card-text">Data Inizio: <?php echo $value['data_inizio']; ?></p>
                             <p class="card-text">Data Fine: <?php echo $value['data_fine']; ?></p>
+                            <form action="/dashboard/event/delete" method="post">
+                                <input type="hidden" name="event_title" value="<?php echo $value['titolo']; ?>">
+                            </form>
                         </div>
                     </div>
+                   
                 </div>
                 <?php } ?>
             <?php } ?>

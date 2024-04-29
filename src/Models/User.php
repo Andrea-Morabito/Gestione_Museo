@@ -52,9 +52,9 @@
         $stmt->execute([$email, $nome, $cognome, $password, $categoria]);
     }
 
-    public function deleteUser(string $email){
-        $sql ="DELETE FROM utente WHERE email = ?";
+    public function deleteUser(string $id){
+        $sql ="DELETE FROM utente WHERE IdUtente = ?";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$email]);
+        $stmt->execute([$id]);
     }
 }

@@ -42,7 +42,7 @@
                 $ticket = new Ticket();
                 $available_tickets = $ticket->getAvailableTickets();
                 return View::make('/dashboard/amministratore/addTicket', $available_tickets);
-            } else{
+            } else{ 
                 return View::make('/error/404');
             }
         }
@@ -113,7 +113,6 @@
         public function deleteUser(){
             $user = new User();
             $user_id = $user->getUser(htmlentities($_POST['user_mail']));
-            
             $booking_manager = new Booking();
             $prenotations = $booking_manager->getBookings($user_id);
 
@@ -123,8 +122,9 @@
                 $accessory->deleteUserAccessories($ticket_id, $user_id);
                 $booking_manager->deleteUserBookings($ticket_id, $user_id);
             }
-            $user->deleteUser(htmlentities($_POST['user_mail']));
-            return View::make('success', ['response_code' => 'Utente Cencellato', 'url' => '/dashboard']);
+            $user->deleteUser($user_id);
+            session_unset();
+            return View::make('success', ['response_code' => 'Utente Cencellato', 'url' => '/login']);
         }
 
         public function addAccessories(){
@@ -141,10 +141,10 @@
             $post_count = count($_POST);
             $counter = 0;
             
+            $listaAccessori = [];
             foreach($_POST as $k => $v) {
                 $counter++;
                 if ($counter < $post_count) {
-                    $listaAccessori = [];
                     foreach($v as $key => $value){
                         $price = $accessory->getPrice($value);
                         array_push($listaAccessori, $accessory->getName($value));

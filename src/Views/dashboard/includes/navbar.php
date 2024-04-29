@@ -15,7 +15,7 @@
             </div>
             <?php if(isset($_SESSION['user_role']) && $_SESSION['user_role'] != 'admin'){ ?>
                 <div class="col center">
-                    <form action="/dashboard/delete_account" method="get">
+                    <form action="/dashboard/users/delete" method="post">
                         <input type="hidden" name="user_mail" value="<?php echo $_SESSION['user_mail'] ?>">
                         <button type="submit" class="btn btn-danger">Cancella</button>
                     </form>

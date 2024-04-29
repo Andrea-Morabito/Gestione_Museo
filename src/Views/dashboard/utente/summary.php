@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    <?php foreach($riepilogo as $k => $v): ?>
+    <?php if(!is_null($riepilogo)){ foreach($riepilogo as $k => $v){ ?>
         <div class="accordion" id="accessoryAccordion">
             <div class="accordion-item">
                 <div class="accordion-collapse collapse show">
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </div>
-    <?php endforeach; ?>
+    <?php }} ?>
 </div>
     </div>
     <div >

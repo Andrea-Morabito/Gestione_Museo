@@ -20,7 +20,9 @@
             $user_surname = htmlentities($_POST['userSurname']);
             $selected_category = $category->getCategory(htmlentities($_POST['category']));
             
-            $user->createUser($email, password_hash($password, PASSWORD_DEFAULT), $username, $user_surname, $selected_category);
+            if($user->createUser($email, password_hash($password, PASSWORD_DEFAULT), $username, $user_surname, $selected_category) == 0){
+                return View::make("/signup/error");
+            }
             $_SESSION['user_mail'] = $email;      
             $_SESSION['user_role'] = 'user';  
             return View::make('success', ['response_code' => 'Registrazione avvenuta con successo', 'url' => '/dashboard']);

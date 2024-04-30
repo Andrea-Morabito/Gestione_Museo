@@ -44,12 +44,17 @@
                                string $password, 
                                string $nome, 
                                string $cognome,
-                               string $categoria){
+                               string $categoria): int{
 
         $sql = "INSERT INTO utente(email, nome, cognome, password, categoria) 
                 VALUES(?, ?, ?, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$email, $nome, $cognome, $password, $categoria]);
+        try {
+            $stmt->execute([$email, $nome, $cognome, $password, $categoria]);
+            return 1;
+        } catch (\Throwable $th) {
+            return 0;
+        }
     }
 
     public function deleteUser(string $id){

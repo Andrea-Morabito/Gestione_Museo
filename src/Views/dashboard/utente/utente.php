@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include("includes/navbar.php")?>
+    <?php include(__DIR__."/../includes/navbar.php")?>
     <h1>Utente</h1>
     <a href="/dashboard/tickets"></a>
 </body>

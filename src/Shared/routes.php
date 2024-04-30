@@ -40,7 +40,7 @@
         ->post("/dashboard/book",[Controllers\Dashboard::class, 'bookEvent'])
         ->get("/dashboard/delete_account",[Controllers\Dashboard::class, 'deleteUserAccount'])
         ->post("/dashboard/add_accessories",[Controllers\Dashboard::class, 'addAccessories'])
-        ->post("/dashboard/event/delete",[Controllers\Dashboard::class, 'deleteEvent']);
+        ->post("/dashboard/event/delete",[Controllers\Dashboard::class, 'deleteUserEvent']);
         
         
     (new App(

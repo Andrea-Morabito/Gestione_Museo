@@ -19,10 +19,21 @@
             return $stmt->fetch()["tariffa"];
         }
 
-        public function getAvailableTickets(): array{
+        public function getTickets(): array{
             $sql = "SELECT titolo, tariffa, data_inizio, data_fine FROM biglietto";
             $stmt = $this->connect()->query($sql);
             $stmt->execute();
+            return $stmt->fetchAll();
+        }
+
+        public function getAvailableTickets($user_id): array{
+            $sql = "SELECT *
+                    FROM biglietto
+                    LEFT JOIN prenotazione ON prenotazione.Codice_Biglietto = biglietto.IdBiglietto
+                    LEFT JOIN utente ON prenotazione.Codice_Utente = ? 
+                    WHERE prenotazione.Codice_Utente IS NULL";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$user_id]);
             return $stmt->fetchAll();
         }
 

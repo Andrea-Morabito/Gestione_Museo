@@ -24,6 +24,7 @@
                             <p class="card-text">Data Inizio: <?php echo $value['data_inizio']; ?></p>
                             <p class="card-text">Data Fine: <?php echo $value['data_fine']; ?></p>
                             <form action="/dashboard/event/delete" method="post">
+                                <input class="btn btn-danger" type="submit" value="Cancella">
                                 <input type="hidden" name="event_title" value="<?php echo $value['titolo']; ?>">
                             </form>
                         </div>

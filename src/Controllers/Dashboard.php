@@ -19,7 +19,7 @@
             if($user_role == "admin"){
                 return View::make('dashboard/amministratore/amministratore');
             } else if($user_role == "user"){
-                return View::make('dashboard/utente');
+                return View::make('dashboard/utente/utente');
             } else{
                 return View::make('error/404');
             }
@@ -27,8 +27,16 @@
 
         public function eventList():string{
             $ticket = new Ticket();
-            $available_tickets = $ticket->getAvailableTickets();
-            return View::make('dashboard/tickets', $available_tickets);
+            $user = new User();
+
+            $user_mail = $_SESSION['user_mail'];
+            $user_id = $user->getUser($user_mail);
+            if($user->getUserRole($user_mail) == "admin"){
+                $available_tickets = $ticket->getTickets();
+            }else{
+                $available_tickets = $ticket->getAvailableTickets($user_id);
+            }
+            return View::make('dashboard/utente/tickets', $available_tickets);
         }
 
         public function userList():string{
@@ -40,7 +48,7 @@
         public function addEventForm(){
             if($_SESSION['user_role'] == 'admin'){
                 $ticket = new Ticket();
-                $available_tickets = $ticket->getAvailableTickets();
+                $available_tickets = $ticket->getTickets();
                 return View::make('/dashboard/amministratore/addTicket', $available_tickets);
             } else{ 
                 return View::make('/error/404');
@@ -92,7 +100,7 @@
 
             $available_accessories = $accessory->getAvailableAccessories();
             $booking_manager->new($ticket_id, $user_id);
-            return View::make('/dashboard/accessories', ['ticket_name' => $ticket_name, 'accessories' => $available_accessories]);
+            return View::make('/dashboard/utente/accessories', ['ticket_name' => $ticket_name, 'accessories' => $available_accessories]);
         }
 
         public function deleteEvent(){
@@ -134,7 +142,7 @@
             $booking_manager = new Booking();
 
             $user_id = $user->getUser($_SESSION['user_mail']);
-            $ticket_id = $ticket->getTicket($_POST['ticket_name']);
+            $ticket_id = $ticket->getTicket(htmlentities($_POST['ticket_name']));
             $category_id = $user->getUserCategory($user_id);
             $ticket_price = $ticket->getPrice($ticket_id);
             $total_price = ( $ticket_price * (100 - $booking_manager->getUserDiscount($category_id)))/100;
@@ -199,5 +207,16 @@
             return View::make('success', ['response_code' => 'Account eliminato con successo', 'url' => '/']);
         }
 
-        public 
-    }
+        public function deleteUserEvent(): string{
+            $booking = new Booking();
+            $user = new User();
+            $ticket = new Ticket();
+            $accessory = new Accessory();
+
+            $user_id = $user->getUser($_SESSION['user_mail']);
+            $ticket_id = $ticket->getTicket(htmlentities($_POST['event_title']));
+            $accessory->deleteUserAccessories($ticket_id, $user_id);
+            $booking->deleteUserBookings($ticket_id, $user_id);
+            return View::make('success', ['response_code' => 'Biglietto eliminato con successo', 'url' => '/dashboard/cart']);
+        }
+ }

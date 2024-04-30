@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Vuoi aggiungere qualcosa?</h1>
-    <?php include('includes/accessory_list.php');?>
-    
+    <?php include(__DIR__.'/../includes/navbar.php');?>
+    <h1>Prenota un evento</h1>
+    <?php include(__DIR__.'/../includes/events.php');?>
 </body>
 </html>

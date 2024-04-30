@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="<?php echo '/ProgettoVenereUDA' . '/' . STYLE_PATH . '/style.css'?>">
 <nav>
-    <div style="margin-bottom: 2em; background-color: #fafaf9; padding-bottom:1em;">
+    <div style="padding-top:1em;margin-bottom: 2em; background-color: #fafaf9; padding-bottom:1em;">
         <div class="row">
             <div class="col center">
                 <a class="navbar-brand" href="/dashboard">Home</a>

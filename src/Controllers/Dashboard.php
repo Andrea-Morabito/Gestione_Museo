@@ -150,6 +150,7 @@
             $counter = 0;
             
             $listaAccessori = [];
+            
             foreach($_POST as $k => $v) {
                 $counter++;
                 if ($counter < $post_count) {

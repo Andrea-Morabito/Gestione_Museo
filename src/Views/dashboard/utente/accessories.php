@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello form Invoice</h1>
-    <h2>ksudh</h2>
+    <h1>Vuoi aggiungere qualcosa?</h1>
+    <?php include(__DIR__.'/../includes/accessory_list.php');?>
+    
 </body>
 </html>

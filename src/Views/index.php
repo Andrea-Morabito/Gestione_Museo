@@ -12,7 +12,7 @@
   
 <body>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg" style="background-color: #171717 !important">
   <div class="container-fluid">
     <img class="navbar-brand" src="<?php echo IMAGES_PATH.'/palette-fill.svg'?>" alt="NAVBAR_LOGO">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,31 +21,32 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/signup">Registrati</a>
-        </li>
-        
+          <a style="color:whitesmoke;" class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>  
       </ul>
     </div>
-    <div>
-      <h1>VENERE</h1>
+    <div style="display:flex; gap:1em">
+      <a class="nav-link" href="/login">Login</a>
+      <a class="nav-link" href="/signup">Registrati</a>
     </div>
   </div>
 </nav>
-<img style="width:100%; object-fit: fill;" src="<?php echo IMAGES_PATH.'/museum_presentation.jpg'?>" class="img-fluid" alt="">
-<!--
-<div class="fixed-bottom">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="<?php echo IMAGES_PATH.'/palette-fill.svg'?>" alt="MUSEUM_LOGO">
-    </a>
-  </div>
-</div>-->
+<div class="center" style="width:100%; heigth:60%; margin-top:2em; justify-content: space-between">
+  <img style="width:350px; heigth:350px" src="<?php echo IMAGES_PATH.'/paintings/painting1.jfif'?>" class="img-fluid" alt="">
+  <img style="width:350px; heigth:350px" src="<?php echo IMAGES_PATH.'/paintings/painting2.jfif' ?>" class="img-fluid" alt="">
+  <img style="width:350px; heigth:350px" src="<?php echo IMAGES_PATH.'/paintings/painting4.jfif' ?>" class="img-fluid" alt="">
+  <img style="width:350px; heigth:350px" src="<?php echo IMAGES_PATH.'/paintings/painting5.jfif' ?>" class="img-fluid" alt="">
+</div>
+  
+
+<div class="row my-5">
+        <div class="col-md-6">
+          <h1>Benvenuti al Museo Venere</h1>
+          <p class="lead">Esplora il fascino dell'arte e della cultura nel cuore di Venezia.</p>
+          <p>Il Museo Venere offre una vasta collezione di opere d'arte, dall'antichità al contemporaneo. Scopri le meraviglie che hanno ispirato generazioni di artisti e appassionati d'arte.</p>
+          <p>Prima di iniziare la tua esperienza, effettua il <a href="/login">login</a> se hai già un account, oppure <a href="/signup">registrati</a> se sei nuovo.</p>
+</div>
+
 
 </body>
 </html>

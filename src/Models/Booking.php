@@ -6,7 +6,7 @@
     class Booking extends DB{
 
         public function getBookings($user_id): array{
-            $sql = "SELECT Codice_Biglietto, Codice_Utente FROM prenotazione WHERE Codice_Utente = ?";
+            $sql = "SELECT Codice_Biglietto, Codice_Utente, costo FROM prenotazione WHERE Codice_Utente = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$user_id]);
             return $stmt->fetchAll();
@@ -34,5 +34,11 @@
             $sql = "DELETE FROM prenotazione WHERE Codice_Biglietto = ? AND Codice_Utente = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$ticket_id, $user_id]);
+        }
+
+        public function setPrice(int $ticket_id, int $user_id, float $price){
+            $sql = "UPDATE prenotazione SET costo = ? WHERE Codice_Biglietto = ? AND Codice_Utente = ?;";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$price, $ticket_id, $user_id]);
         }
     }

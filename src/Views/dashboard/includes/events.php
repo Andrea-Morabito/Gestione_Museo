@@ -16,7 +16,7 @@
         </thead>
         <tbody>
             <?php foreach($this->params as $key=>$v){ ?>
-                <tr>
+                <tr >
                     <td><?php echo $v['titolo']?></td>
                     <td><?php echo $v['tariffa']?></td>
                     <td><?php echo $v['data_inizio']?></td>

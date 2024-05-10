@@ -160,6 +160,7 @@
                         $total_price += $price;
                         $accessory->addTicketAccessory($ticket_id, (int)$v, $user_id);
                     }
+                    $booking_manager->setPrice($ticket_id, $user_id, $total_price);
                 }
             }
             return View::make('/dashboard/utente/summary', ['response_code' => 'Accessori aggiunti correttamente', 'url' => '/dashboard', 'totale'=> $total_price, 'riepilogo'=>$listaAccessori, 'nome_biglietto' => $_POST['ticket_name'], 'prezzo_biglietto' => $ticket_price]);

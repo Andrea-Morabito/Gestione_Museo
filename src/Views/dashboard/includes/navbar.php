@@ -2,8 +2,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="<?php echo '/ProgettoVenereUDA' . '/' . STYLE_PATH . '/style.css'?>">
 <nav>
-    <div style="padding-top:1em;margin-bottom: 2em; background-color: #fafaf9; padding-bottom:1em;">
-        <div class="row">
+    <div class="navbar" style="background-color: #f8fafc">
+        <div class="row" style="width:100%">
             <div class="col center">
                 <a class="navbar-brand" href="/dashboard">Home</a>
             </div>
@@ -17,7 +17,7 @@
                 <div class="col center">
                     <form action="/dashboard/users/delete" method="post">
                         <input type="hidden" name="user_mail" value="<?php echo $_SESSION['user_mail'] ?>">
-                        <button type="submit" class="btn btn-danger">Cancella</button>
+                        <button type="submit" class="btn btn-danger">Rimuovi account <img src="<?php echo IMAGES_PATH.'/delete_account.svg'?>" alt=""></button>
                     </form>
                 </div>
                 <div class="col center">

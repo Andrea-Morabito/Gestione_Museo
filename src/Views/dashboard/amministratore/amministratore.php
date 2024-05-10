@@ -12,16 +12,16 @@
     
     <?php include(__DIR__.'/../includes/navbar.php')?>
     <h1>Amministratore</h1>
-
+    
     <div style="margin: 1em 0" class="row">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title"><strong>Aggiungi Biglietto</strong></h5>
                     <p class="card-text">Clicca qui per aggiungere un nuovo biglietto.</p>
-
-                        <a href="/dashboard/tickets/add" class="btn btn-primary">Vai</a>
-
+                    
+                    <a href="/dashboard/tickets/add" class="btn btn-primary">Vai</a>
+                    
                 </div>
             </div>
         </div>
@@ -34,6 +34,22 @@
                 </div>
             </div>
         </div>
+
+        <section class="container">
+        <div class="row">
+            <div class="col-md-6">
+            <h2>Benvenuto nella tua dashboard admin</h2>
+            <p class="lead">Ecco cosa puoi fare nella tua dashboard:</p>
+            <ul>
+                <li>visualizzare, aggiungere  e cancellare utenti</li>
+                <li>visualizzare, cancellare e creare biglietti</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <img style="heigth:300px; width:300px;" src="<?php echo IMAGES_PATH.'/admin_dashboard_profile_pic.jfif'?>" class="img-fluid" alt="User Dashboard Image">
+        </div>
+    </div>
+        </section>
     </div>
 </body>
 </html>

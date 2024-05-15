@@ -1,5 +1,4 @@
-# Progetto Interdisciplinare UDA
-## Gestione Biglietteria Museo
+# Gestione Biglietteria Museo
 
 Il progetto verrà composta da 4 fasi principali:
 | Fase |          Nome Fase          | Durata Fase (ore) |

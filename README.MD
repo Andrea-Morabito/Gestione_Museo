@@ -9,4 +9,4 @@ Il progetto verrà composta da 4 fasi principali:
 | 3    |   Progettazione software    |                32 |
 | 4    |          Follow-up          |                 1 |
 
-Nel Caso in cui ci si voglia connettere ad un'altro database andare nella cartelle 'src' e modificare le variabili contenute nel file DB.php
+Nel caso in cui ci si voglia connettere ad un'altro database andare nella cartelle 'src' e modificare le variabili contenute nel file DB.php
